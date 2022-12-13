@@ -1,0 +1,28 @@
+@use "../helpers/mixins" as *;
+
+.container {
+  padding: {
+    left: 15px;
+    right: 15px;
+  }
+  margin: {
+    left: auto;
+    right: auto;
+  }
+
+  @include breakpoint(sm) {
+    width: 450px;
+  }
+  @include breakpoint(md) {
+    width: 720px;
+  }
+  @include breakpoint(lg) {
+    width: 960px;
+  }
+  @include breakpoint(xl) {
+    width: 1140px;
+  }
+  @include breakpoint(xxl) {
+    width: 1300px;
+  }
+}
