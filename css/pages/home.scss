@@ -1,0 +1,59 @@
+@use "../sass/helpers/variables" as *;
+/* Start styling the home page */
+#first-slider {
+  width: 100%;
+  height: calc(100vh - 3em);
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  .slider-container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      gap: 1em;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity $main-transition;
+
+      &.active {
+        opacity: 1;
+      }
+
+      > div {
+        flex-basis: 50%;
+
+        img {
+          display: block;
+          margin: auto;
+        }
+      }
+    }
+  }
+
+  .slider-controls {
+    display: flex;
+    gap: 5px;
+    li {
+      width: 1em;
+      height: 6px;
+      border-radius: 3px;
+      background-color: #aaa;
+      transition: width $main-transition;
+
+      &.active {
+        width: 2em;
+        height: 6px;
+      }
+    }
+  }
+}

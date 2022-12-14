@@ -1,0 +1,36 @@
+@use "../helpers/variables" as *;
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $main-bg-color;
+  font-family: "Inter", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+/* start styling the scrollBar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ddd;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  box-shadow: 0 0 3px #ddd inset;
+  border: 2px #ddd solid {
+    radius: 5px;
+  }
+}
+/* finish styling the scrollBar */

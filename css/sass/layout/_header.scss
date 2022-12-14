@@ -1,5 +1,30 @@
+@use "../helpers/variables" as *;
+
 /* Start Styling The Header*/
 header {
-  display: flex;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3em;
+  background-color: $main-bg-color;
+  transition: box-shadow 0.3s;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: inherit;
+
+    ul {
+      display: flex;
+      gap: 1.5em;
+      text-transform: capitalize;
+    }
+
+    nav {
+      justify-self: flex-start;
+    }
+  }
 }
 /* finish Styling The Header*/

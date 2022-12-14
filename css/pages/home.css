@@ -1,0 +1,51 @@
+/* Start styling the home page */
+#first-slider {
+  width: 100%;
+  height: calc(100vh - 3em);
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+#first-slider .slider-container {
+  position: relative;
+  width: 100%;
+  height: 450px;
+}
+#first-slider .slider-container .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  gap: 1em;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+#first-slider .slider-container .slide.active {
+  opacity: 1;
+}
+#first-slider .slider-container .slide > div {
+  flex-basis: 50%;
+}
+#first-slider .slider-container .slide > div img {
+  display: block;
+  margin: auto;
+}
+#first-slider .slider-controls {
+  display: flex;
+  gap: 5px;
+}
+#first-slider .slider-controls li {
+  width: 1em;
+  height: 6px;
+  border-radius: 3px;
+  background-color: #aaa;
+  transition: width 0.3s;
+}
+#first-slider .slider-controls li.active {
+  width: 2em;
+  height: 6px;
+}/*# sourceMappingURL=home.css.map */
