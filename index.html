@@ -7,28 +7,36 @@
     <!-- css files -->
     <link rel="stylesheet" href="./css/normilize.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/sass/pages/home.css" />
+    <link rel="stylesheet" href="./css/pages/home.css" />
     <title>e-shop</title>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="container">
-      <header>
+    <header>
+      <div class="container">
         <h2>
           <a href="#home">
             <box-icon name="shopping-bags" type="solid"></box-icon> e-shop
           </a>
         </h2>
-        <nav>
+        <nav class="pages-bar">
           <ul>
-            <li>home</li>
-            <li>shop</li>
-            <li>cart</li>
-            <li>blog</li>
-            <li>faq's</li>
-            <li>contact</li>
+            <li><a href="">home</a></li>
+            <li><a href="">shop</a></li>
+            <li><a href="">cart</a></li>
+            <li><a href="">blog</a></li>
+            <li><a href="">faq's</a></li>
+            <li><a href="">contact</a></li>
           </ul>
         </nav>
-        <ul>
+        <ul class="user-bar">
           <li>
             <a href=""><box-icon name="user"></box-icon></a>
           </li>
@@ -36,9 +44,71 @@
             <a href=""><box-icon name="shopping-bag"></box-icon></a>
           </li>
         </ul>
-      </header>
+      </div>
+    </header>
+    <div class="container">
+      <div id="first-slider">
+        <div class="slider-container">
+          <div class="slide">
+            <div class="img">
+              <img src="./imgs/slide-1.png" alt="T-shirt" />
+            </div>
+            <div class="info">
+              <h3>#1 trending item</h3>
+              <h1>original is never finished!!</h1>
+              <p>
+                This is a place of hope, meaning and purpose. Visit and become a
+                part of something bigger - a movement that is changing lives.
+              </p>
+              <div class="product-actions">
+                <a href="#">buy now</a>
+                <a href="">veiw details</a>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="img">
+              <img src="./imgs/slide-2.png" alt="T-shirt" />
+            </div>
+            <div class="info">
+              <h3>#2 top best due</h3>
+              <h1>fall - winter 2022</h1>
+              <p>
+                A specialist label creating luxury essentials. Ethically crafted
+                with an unwavering commitment to exceptional quality.
+              </p>
+              <div class="product-actions">
+                <a href="#">buy now</a>
+                <a href=""
+                  >veiw details
+                  <!-- <box-icon name="arrow"></box-icon> -->
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="img">
+              <img src="./imgs/slide-3.png" alt="T-shirt" />
+            </div>
+            <div class="info">
+              <h3>#3 trending item</h3>
+              <h1>sale 20% off on everyitem</h1>
+              <p>
+                A specialist label creating luxury essentials. Ethically crafted
+                with an unwavering commitment to exceptional quality.
+              </p>
+              <div class="product-actions">
+                <a href="#">buy now</a>
+                <a href="">veiw details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul class="slider-controls"></ul>
+      </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
     <script src="/js/main.js"></script>
   </body>
 </html>
