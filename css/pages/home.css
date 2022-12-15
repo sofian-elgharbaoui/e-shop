@@ -26,6 +26,7 @@
 }
 #first-slider .slider-container .slide.active {
   opacity: 1;
+  z-index: 1;
 }
 #first-slider .slider-container .slide > div {
   flex-basis: 50%;
@@ -33,6 +34,36 @@
 #first-slider .slider-container .slide > div img {
   display: block;
   margin: auto;
+}
+#first-slider .slider-container .slide .info {
+  position: relative;
+}
+#first-slider .slider-container .slide .info h3, #first-slider .slider-container .slide .info .product-actions, #first-slider .slider-container .slide .info h1 {
+  text-transform: uppercase;
+}
+#first-slider .slider-container .slide .info h1 {
+  width: 200px;
+}
+#first-slider .slider-container .slide .info .product-actions {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#first-slider .slider-container .slide .info .product-actions a {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1.5em 3em;
+  border-radius: 1em;
+  display: flex;
+  align-items: center;
+}
+#first-slider .slider-container .slide .info .product-actions a:first-child {
+  background-color: rgb(255, 60, 0);
+  color: #f8f7fe;
 }
 #first-slider .slider-controls {
   display: flex;

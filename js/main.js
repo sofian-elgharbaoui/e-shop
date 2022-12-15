@@ -9,7 +9,6 @@ window.onscroll = () => {
 };
 
 // let style the slider
-let sliderContainer = document.querySelector(".slider-container");
 let allSlides = document.querySelectorAll(".slide");
 let slidesNumber = allSlides.length;
 let currentSlide = 1;
@@ -22,25 +21,49 @@ for (let i = 1; i <= slidesNumber; i++) {
   sliderControlsUp.append(liItem);
 }
 
+let sliderControls = document.querySelectorAll(".slider-controls li");
+
 let goToSlide;
 (goToSlide = function () {
-  let sliderControls = document.querySelectorAll(".slider-controls li");
-  sliderControls[currentSlide - 1].classList.add("active");
-
+  allSlides.forEach((slide) => {
+    slide.classList.remove("active");
+  });
   allSlides[currentSlide - 1].classList.add("active");
+
+  sliderControls.forEach((sliderControl) => {
+    sliderControl.classList.remove("active");
+  });
+  sliderControls[currentSlide - 1].classList.add("active");
 })();
 
-let sliderControls = document.querySelectorAll(".slider-controls li");
-for (let i = 0; i < sliderControls.length; i++) {
-  sliderControls[i].onclick = (e) => {
-    sliderControls.forEach((sliderControl) => {
-      sliderControl.classList.remove("active");
-    });
-    allSlides.forEach((slide) => {
-      slide.classList.remove("active");
-    });
+// controles onclick event
 
+for (let i = 0; i < sliderControls.length; i++) {
+  sliderControls[i].onclick = () => {
     currentSlide = +sliderControls[i].getAttribute("data-index");
     goToSlide();
   };
 }
+
+(function selfChange() {
+  let autoChange = setInterval(() => {
+    if (currentSlide >= 1 && currentSlide < slidesNumber) {
+      currentSlide++;
+      console.log(currentSlide);
+    } else {
+      currentSlide = 1;
+      console.log(currentSlide);
+    }
+    goToSlide();
+  }, 3000);
+
+  for (let i = 0; i < sliderControls.length; i++) {
+    sliderControls[i].onclick = () => {
+      clearInterval(autoChange);
+      currentSlide = +sliderControls[i].getAttribute("data-index");
+      goToSlide();
+
+      selfChange();
+    };
+  }
+})();

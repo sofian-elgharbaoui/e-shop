@@ -27,6 +27,7 @@
 
       &.active {
         opacity: 1;
+        z-index: 1;
       }
 
       > div {
@@ -35,6 +36,42 @@
         img {
           display: block;
           margin: auto;
+        }
+      }
+
+      .info {
+        position: relative;
+
+        h3 {
+          text-transform: uppercase;
+        }
+
+        h1 {
+          @extend h3;
+          width: 200px;
+        }
+
+        .product-actions {
+          @extend h3;
+          position: absolute;
+          bottom: 10%;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+
+          a {
+            display: block;
+            width: fit-content;
+            padding: 1.5em 3em;
+            border-radius: 1em;
+            display: flex;
+            align-items: center;
+
+            &:first-child {
+              background-color: $main-clr;
+              color: $main-bg-clr;
+            }
+          }
         }
       }
     }
