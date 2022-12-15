@@ -6,9 +6,14 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #f8f7fe;
   font-family: "Inter", sans-serif;
+  height: 200vh;
 }
 
 ul {
@@ -32,33 +37,22 @@ ul {
 }
 
 /* finish styling the scrollBar */
-/* Start Styling The Header*/
-header {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3em;
-  background-color: #f8f7fe;
-  transition: box-shadow 0.3s;
+/* start styling the goes-up button */
+#go-up {
+  padding: 0.5em;
+  border-radius: 0.5em;
+  background-color: rgb(255, 60, 0);
+  position: fixed;
+  right: 2em;
+  bottom: -3em;
+  opacity: 0;
+  transition: 0.3s;
 }
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: inherit;
-}
-header .container ul {
-  display: flex;
-  gap: 1.5em;
-  text-transform: capitalize;
-}
-header .container nav {
-  justify-self: flex-start;
+#go-up.visible {
+  bottom: 2em;
+  opacity: 1;
 }
 
-/* finish Styling The Header*/
 .container {
   padding-left: 15px;
   padding-right: 15px;
@@ -89,4 +83,32 @@ header .container nav {
   .container {
     width: 1300px;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* Start Styling The Header*/
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3em;
+  background-color: #f8f7fe;
+  transition: box-shadow 0.3s;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+}
+header .container ul {
+  display: flex;
+  gap: 1.5em;
+  text-transform: capitalize;
+}
+header .container nav {
+  justify-self: flex-start;
+}
+
+/* finish Styling The Header*//*# sourceMappingURL=style.css.map */

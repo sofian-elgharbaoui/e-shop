@@ -8,9 +8,14 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: $main-bg-color;
+  background-color: $main-bg-clr;
   font-family: "Inter", sans-serif;
+  height: 200vh;
 }
 
 ul {
@@ -34,3 +39,19 @@ ul {
   }
 }
 /* finish styling the scrollBar */
+/* start styling the goes-up button */
+#go-up {
+  padding: 0.5em;
+  border-radius: 0.5em;
+  background-color: $alternative-bg-clr;
+  position: fixed;
+  right: 2em;
+  bottom: -3em;
+  opacity: 0;
+  transition: $main-transition;
+
+  &.visible {
+    bottom: 2em;
+    opacity: 1;
+  }
+}

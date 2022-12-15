@@ -68,8 +68,8 @@
             align-items: center;
 
             &:first-child {
-              background-color: $main-clr;
-              color: $main-bg-clr;
+              background-color: $alternative-bg-clr;
+              color: $alternative-clr;
             }
           }
         }

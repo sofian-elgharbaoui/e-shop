@@ -1,14 +1,24 @@
-// set the box-shadow for the header according to the sroll place
+// Let me set the box-shadow for the header according to the sroll possition
+// And show the go-up button
 let header = $("header");
+let goUp = $("#go-up");
+
 window.onscroll = () => {
+  console.log(window.scrollY);
   if (window.scrollY >= header.height()) {
     header.css("box-shadow", "0 1px 3px #ddd");
   } else {
     header.css("box-shadow", "none");
   }
+
+  if (window.scrollY >= 500) {
+    goUp.addClass("visible");
+  } else {
+    goUp.removeClass("visible");
+  }
 };
 
-// let style the slider
+// let me style the slider
 let allSlides = document.querySelectorAll(".slide");
 let slidesNumber = allSlides.length;
 let currentSlide = 1;
