@@ -1,6 +1,50 @@
-$main-clr: rgb(255, 60, 0);
-$main-bg-clr: #f8f7fe;
+@use "./mixins" as *;
+
+// // // colors
+$title-clr: hsl(250, 8%, 15%);
+$text-clr: hsl(250, 8%, 35%);
+$body-clr: hsl(250, 60%, 98%);
+$section-clr: #fff;
+$shadow: hsla(0, 0%, 15%, 0.1);
+
+// // // Font And Typography
+$body-font: "Poppins", sans-serif;
+$biggest-font-size: 4em;
+$h1-font-size: 2.25em;
+$h2-font-size: 1.5em;
+$h3-font-size: 1.25em;
+$normal-font-size: 1em;
+$small-font-size: 0.875em;
+$smaller-font-size: 0.813em;
+
+// // // Font Weight
+$font-medium: 500;
+$font-bold: 600;
+
+// // // Margins Bottom
+$mb-0-5: 0.5em;
+$mb-0-75: 0.75em;
+$mb-1: 1em;
+$mb-1-5: 1.5em;
+$mb-2: 2em;
+$mb-2-5: 2.5em;
+$mb-3: 3em;
+
+// // // Transition
 $main-transition: 0.3s;
 
-$alternative-bg-clr: rgb(255, 60, 0);
-$alternative-clr: #f8f7fe;
+// // // Z-index
+$z-header: 99;
+$z-tooltip: 10;
+$z-fixed: 99;
+
+// // // Responsive Typography
+@media screen and (max-width: 991px) {
+  $biggest-font-size: 4em;
+  $h1-font-size: 2.25em;
+  $h2-font-size: 1.5em;
+  $h3-font-size: 1.25em;
+  $normal-font-size: 1em;
+  $small-font-size: 0.875em;
+  $smaller-font-size: 0.813em;
+}

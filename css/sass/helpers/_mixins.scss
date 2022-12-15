@@ -26,3 +26,15 @@
     }
   }
 }
+
+@mixin same-anchore($clr: black, $bg-clr: rgba(0, 0, 0, 0)) {
+  display: block;
+  width: fit-content;
+  padding: 1.5em 3em;
+  border-radius: 1em;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  background-color: $bg-clr;
+  color: $clr;
+}

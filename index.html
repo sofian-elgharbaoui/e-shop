@@ -19,6 +19,9 @@
     />
   </head>
   <body id="home">
+    <a href="#home" id="go-up"
+      ><box-icon name="up-arrow-alt" color="#fff"></box-icon
+    ></a>
     <header>
       <div class="container">
         <h2>
@@ -47,8 +50,7 @@
       </div>
     </header>
     <div class="container">
-      <a href="#home" id="go-up"><box-icon name="up-arrow-alt"></box-icon></a>
-      <div id="first-slider">
+      <div id="interface">
         <div class="slider-container">
           <div class="slide">
             <div class="img">
@@ -110,9 +112,20 @@
         </div>
         <ul class="slider-controls"></ul>
       </div>
+      <div id="discount-section">
+        <img src="./imgs/discount.png" alt="up to 50% of discount" />
+        <div class="info">
+          <h1>50% discount on new products</h1>
+          <a href="#">buy now</a>
+        </div>
+      </div>
+      <div id="new-arrivals">
+        <h1>new arrivals</h1>
+        <div class="new-products"></div>
+      </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/dist/boxicons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/main.js" type="module"></script>
   </body>
 </html>

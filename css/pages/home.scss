@@ -1,6 +1,7 @@
 @use "../sass/helpers/variables" as *;
+@use "../sass/helpers/mixins" as *;
 /* Start styling the home page */
-#first-slider {
+#interface {
   width: 100%;
   height: calc(100vh - 3em);
   display: flex;
@@ -52,7 +53,6 @@
         }
 
         .product-actions {
-          @extend h3;
           position: absolute;
           bottom: 10%;
           width: 100%;
@@ -60,12 +60,7 @@
           justify-content: space-between;
 
           a {
-            display: block;
-            width: fit-content;
-            padding: 1.5em 3em;
-            border-radius: 1em;
-            display: flex;
-            align-items: center;
+            @include same-anchore;
 
             &:first-child {
               background-color: $alternative-bg-clr;
@@ -80,6 +75,7 @@
   .slider-controls {
     display: flex;
     gap: 5px;
+
     li {
       width: 1em;
       height: 6px;
@@ -90,6 +86,76 @@
       &.active {
         width: 2em;
         height: 6px;
+      }
+    }
+  }
+}
+
+#discount-section {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #fff;
+  border-radius: 3em;
+  margin: {
+    top: $margin;
+    bottom: $margin;
+  }
+  padding: 1em 0;
+
+  > * {
+    flex-basis: 30%;
+  }
+
+  img {
+    width: 300px;
+    display: block;
+  }
+
+  .info {
+    display: grid;
+    place-content: center;
+    gap: 2em;
+
+    h1 {
+      width: 260px;
+      margin: auto;
+      text-align: center;
+    }
+
+    a {
+      @include same-anchore($alternative-clr, $alternative-bg-clr);
+      margin: auto;
+    }
+  }
+}
+
+#new-arrivals {
+  text-align: center;
+  padding: {
+    bottom: $padding;
+  }
+  .new-products {
+    height: 350px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 3em;
+    display: flex;
+    gap: 1em;
+
+    .new-product {
+      height: 100%;
+      img {
+        width: 100%;
+        // display: block;
+      }
+      h2 {
+        text-transform: capitalize;
+      }
+      span {
+        color: gray;
+      }
+      del {
+        color: $main-clr;
       }
     }
   }

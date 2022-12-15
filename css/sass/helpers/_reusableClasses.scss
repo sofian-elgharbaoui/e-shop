@@ -1,0 +1,24 @@
+@use "./variables" as *;
+
+.section_padding {
+  padding: 7em 0 2em;
+}
+
+.section_title,
+.breadcrumb_subtitle {
+  font-size: $h1-font-size;
+}
+
+.section_title,
+.breadcrumb_title,
+.breadcrumb_subtitle {
+  text-align: center;
+}
+
+.d-fl {
+  display: grid;
+}
+
+.d-gr {
+  display: grid;
+}

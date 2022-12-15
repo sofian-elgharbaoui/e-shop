@@ -1,10 +1,10 @@
+import newProducts from "./newProducts.json" assert { type: "json" };
 // Let me set the box-shadow for the header according to the sroll possition
 // And show the go-up button
 let header = $("header");
 let goUp = $("#go-up");
 
 window.onscroll = () => {
-  console.log(window.scrollY);
   if (window.scrollY >= header.height()) {
     header.css("box-shadow", "0 1px 3px #ddd");
   } else {
@@ -46,7 +46,7 @@ let goToSlide;
   sliderControls[currentSlide - 1].classList.add("active");
 })();
 
-// controles onclick event
+// the controles on the click event
 
 for (let i = 0; i < sliderControls.length; i++) {
   sliderControls[i].onclick = () => {
@@ -57,15 +57,11 @@ for (let i = 0; i < sliderControls.length; i++) {
 
 (function selfChange() {
   let autoChange = setInterval(() => {
-    if (currentSlide >= 1 && currentSlide < slidesNumber) {
-      currentSlide++;
-      console.log(currentSlide);
-    } else {
-      currentSlide = 1;
-      console.log(currentSlide);
-    }
+    currentSlide >= 1 && currentSlide < slidesNumber
+      ? currentSlide++
+      : (currentSlide = 1);
     goToSlide();
-  }, 3000);
+  }, 5000);
 
   for (let i = 0; i < sliderControls.length; i++) {
     sliderControls[i].onclick = () => {
@@ -77,3 +73,21 @@ for (let i = 0; i < sliderControls.length; i++) {
     };
   }
 })();
+
+console.log(newProducts);
+
+// put the arrival products in there place
+let newArrivals = document.querySelector(".new-products");
+
+for (let i = 0; i < newProducts.length; i++) {
+  let newProduct = document.createElement("div");
+  newProduct.id = newProducts[i].id;
+  newProduct.className = "new-product";
+  newProduct.innerHTML = `
+    <img src="${newProducts[i].img}"/>
+    <h2>${newProducts[i].name}</h2>
+    <span>${newProducts[i].type}</span>
+    <div><span>${newProducts[i].price}</span> <del>${newProducts[i]["previous-price"]}</del></div>
+  `;
+  newArrivals.appendChild(newProduct);
+}

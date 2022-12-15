@@ -1,4 +1,5 @@
 @use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
 
 *,
 *::before,
@@ -13,8 +14,8 @@ html {
 }
 
 body {
-  background-color: $main-bg-clr;
-  font-family: "Inter", sans-serif;
+  background-color: $body-clr;
+  font-family: $body-font;
   height: 200vh;
 }
 
@@ -22,6 +23,21 @@ ul {
   list-style: none;
 }
 
+h1,
+h2,
+h3 {
+  color: $title-clr;
+  font-weight: $font-medium;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+}
 /* start styling the scrollBar */
 ::-webkit-scrollbar {
   width: 10px;
@@ -55,3 +71,4 @@ ul {
     opacity: 1;
   }
 }
+/* finish styling the goes-up button */

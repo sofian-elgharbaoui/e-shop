@@ -1,0 +1,50 @@
+[
+  {
+    "id": 0,
+    "img": "/imgs/new-1.png",
+    "name": "windbeaker jacket",
+    "type": "accessory",
+    "price": "$14,99",
+    "previous-price": "29.99"
+  },
+  {
+    "id": 1,
+    "img": "/imgs/new-2.png",
+    "name": "air jorden zipper",
+    "type": "accessory",
+    "price": "$11,99",
+    "previous-price": "21.99"
+  },
+  {
+    "id": 3,
+    "img": "/imgs/new-3.png",
+    "name": "windbeaker jacket",
+    "type": "accessory",
+    "price": "$14,99",
+    "previous-price": "29.99"
+  },
+  {
+    "id": 4,
+    "img": "/imgs/new-4.png",
+    "name": "windbeaker jacket",
+    "type": "accessory",
+    "price": "$14,99",
+    "previous-price": "29.99"
+  },
+  {
+    "id": 5,
+    "img": "/imgs/new-5.png",
+    "name": "windbeaker jacket",
+    "type": "accessory",
+    "price": "$14,99",
+    "previous-price": "29.99"
+  },
+  {
+    "id": 6,
+    "img": "/imgs/new-6.png",
+    "name": "nike hoodie",
+    "type": "accessory",
+    "price": "$7,99",
+    "previous-price": "14.99"
+  }
+]
