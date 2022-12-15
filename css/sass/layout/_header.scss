@@ -6,7 +6,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 3em;
+  height: 3.5em;
   background-color: $section-clr;
   transition: box-shadow $main-transition;
   z-index: $z-header;
@@ -17,10 +17,123 @@ header {
     align-items: center;
     height: inherit;
 
+    #logo {
+      display: block;
+      // align-items: center;
+      // gap: 0.5em;
+      font-weight: $bold-font;
+    }
+
     ul {
+      font-weight: $md-font;
       display: flex;
+      align-items: center;
       gap: 1.5em;
       text-transform: capitalize;
+
+      li {
+        height: 100%;
+        a {
+          height: 2em;
+          display: flex;
+          align-items: center;
+
+          &:hover,
+          &.active {
+            color: $first-clr;
+            position: relative;
+            // font-size: $normal-font-size;
+          }
+
+          &.active::after {
+            content: "";
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $first-clr;
+          }
+        }
+      }
+    }
+    .user-bar {
+      li {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .aside-cart {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 25em;
+    background-color: $body-clr;
+    padding: 1em;
+    box-shadow: -3px 0 3px $shadow;
+
+    .close-btn {
+      width: fit-content;
+      font-size: xx-small;
+      margin: {
+        left: auto;
+        bottom: $mb-2;
+      }
+      cursor: pointer;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: $mb-1-5;
+      color: $title-clr;
+    }
+
+    .chosen-product {
+      gap: 1em;
+      .img {
+        width: 7em;
+        background-color: $section-clr;
+        padding: 0.5em;
+      }
+
+      .details {
+        flex-basis: 100%;
+        h3 {
+          text-transform: capitalize;
+          margin-bottom: $mb-1;
+        }
+
+        .price {
+          color: $first-clr;
+          margin-bottom: $mb-1;
+        }
+
+        .controls {
+          display: flex;
+          align-items: center;
+          // padding: 0 0.5em;
+          font-size: $h3-font-size;
+          color: $text-clr;
+
+          .minus,
+          .plus {
+            background-color: $section-clr;
+            padding: 0 12px;
+            border-radius: 5px;
+          }
+          .amount {
+            padding: 0 0.5em;
+          }
+          box-icon {
+            margin-left: auto;
+          }
+        }
+      }
     }
   }
 }

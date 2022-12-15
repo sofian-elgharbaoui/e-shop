@@ -15,8 +15,16 @@
   text-align: center;
 }
 
+.d-nn {
+  display: none;
+}
+
+.d-bl {
+  display: block;
+}
+
 .d-fl {
-  display: grid;
+  display: flex;
 }
 
 .d-gr {

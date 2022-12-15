@@ -1,11 +1,15 @@
 @use "./mixins" as *;
 
 // // // colors
+$clr: #eee;
 $title-clr: hsl(250, 8%, 15%);
 $text-clr: hsl(250, 8%, 35%);
 $body-clr: hsl(250, 60%, 98%);
 $section-clr: #fff;
 $shadow: hsla(0, 0%, 15%, 0.1);
+$hue: 0;
+$first-clr: hsl($hue, 88%, 61%);
+$first-clr-alt: hsl($hue, 88%, 58%);
 
 // // // Font And Typography
 $body-font: "Poppins", sans-serif;
@@ -18,8 +22,10 @@ $small-font-size: 0.875em;
 $smaller-font-size: 0.813em;
 
 // // // Font Weight
-$font-medium: 500;
-$font-bold: 600;
+$rg-font: 500;
+$md-font: 500;
+$sm-bold-font: 600;
+$bold-font: 700;
 
 // // // Margins Bottom
 $mb-0-5: 0.5em;
@@ -34,8 +40,8 @@ $mb-3: 3em;
 $main-transition: 0.3s;
 
 // // // Z-index
-$z-header: 99;
-$z-tooltip: 10;
+$z-header: 90;
+$z-tooltip: 100;
 $z-fixed: 99;
 
 // // // Responsive Typography

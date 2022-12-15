@@ -65,8 +65,8 @@
   color: black;
 }
 #interface .slider-container .slide .info .product-actions a:first-child {
-  background-color: rgb(255, 60, 0);
-  color: #f8f7fe;
+  background-color: hsl(0deg, 88%, 58%);
+  color: #eee;
 }
 #interface .slider-controls {
   display: flex;
@@ -89,8 +89,7 @@
   justify-content: space-evenly;
   background-color: #fff;
   border-radius: 3em;
-  margin-top: 6em;
-  margin-bottom: 6em;
+  margin-bottom: 3em;
   padding: 1em 0;
 }
 #discount-section > * {
@@ -120,14 +119,13 @@
   display: flex;
   align-items: center;
   text-transform: uppercase;
-  background-color: rgb(255, 60, 0);
-  color: #f8f7fe;
+  background-color: hsl(0deg, 88%, 58%);
+  color: #eee;
   margin: auto;
 }
 
 #new-arrivals {
   text-align: center;
-  padding-bottom: 6em;
 }
 #new-arrivals .new-products {
   height: 350px;
@@ -150,5 +148,5 @@
   color: gray;
 }
 #new-arrivals .new-products .new-product del {
-  color: rgb(255, 60, 0);
+  color: orangered;
 }/*# sourceMappingURL=home.css.map */

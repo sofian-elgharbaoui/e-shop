@@ -27,7 +27,7 @@ h1,
 h2,
 h3 {
   color: $title-clr;
-  font-weight: $font-medium;
+  font-weight: $md-font;
 }
 
 img {
@@ -57,13 +57,17 @@ button {
 /* finish styling the scrollBar */
 /* start styling the goes-up button */
 #go-up {
-  padding: 0.5em;
+  width: 2.5em;
+  height: 2.5em;
   border-radius: 0.5em;
-  background-color: $alternative-bg-clr;
+  background-color: $first-clr-alt;
+  display: grid;
+  place-content: center;
   position: fixed;
   right: 2em;
   bottom: -3em;
   opacity: 0;
+  z-index: $z-tooltip;
   transition: $main-transition;
 
   &.visible {

@@ -11,13 +11,29 @@ html {
 }
 
 body {
-  background-color: #f8f7fe;
-  font-family: "Inter", sans-serif;
+  background-color: hsl(250deg, 60%, 98%);
+  font-family: "Poppins", sans-serif;
   height: 200vh;
 }
 
 ul {
   list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  color: hsl(250deg, 8%, 15%);
+  font-weight: 500;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
 }
 
 /* start styling the scrollBar */
@@ -39,13 +55,17 @@ ul {
 /* finish styling the scrollBar */
 /* start styling the goes-up button */
 #go-up {
-  padding: 0.5em;
+  width: 2.5em;
+  height: 2.5em;
   border-radius: 0.5em;
-  background-color: rgb(255, 60, 0);
+  background-color: hsl(0deg, 88%, 58%);
+  display: grid;
+  place-content: center;
   position: fixed;
   right: 2em;
   bottom: -3em;
   opacity: 0;
+  z-index: 100;
   transition: 0.3s;
 }
 #go-up.visible {
@@ -53,18 +73,36 @@ ul {
   opacity: 1;
 }
 
-.same-a {
+/* finish styling the goes-up button */
+.section_padding {
+  padding: 7em 0 2em;
+}
+
+.section_title,
+.breadcrumb_subtitle {
+  font-size: 2.25em;
+}
+
+.section_title,
+.breadcrumb_title,
+.breadcrumb_subtitle {
+  text-align: center;
+}
+
+.d-nn {
+  display: none;
+}
+
+.d-bl {
   display: block;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 1.5em 3em;
-  border-radius: 1em;
+}
+
+.d-fl {
   display: flex;
-  align-items: center;
-  text-transform: uppercase;
-  background-color: rgb(255, 60, 0);
-  color: #f8f7fe;
+}
+
+.d-gr {
+  display: grid;
 }
 
 .container {
@@ -106,10 +144,10 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 3em;
-  background-color: #f8f7fe;
+  height: 3.5em;
+  background-color: #fff;
   transition: box-shadow 0.3s;
-  z-index: 99;
+  z-index: 90;
 }
 header .container {
   display: flex;
@@ -117,13 +155,104 @@ header .container {
   align-items: center;
   height: inherit;
 }
+header .container #logo {
+  display: block;
+  font-weight: 700;
+}
 header .container ul {
+  font-weight: 500;
   display: flex;
+  align-items: center;
   gap: 1.5em;
   text-transform: capitalize;
 }
-header .container nav {
-  justify-self: flex-start;
+header .container ul li {
+  height: 100%;
+}
+header .container ul li a {
+  height: 2em;
+  display: flex;
+  align-items: center;
+}
+header .container ul li a:hover, header .container ul li a.active {
+  color: hsl(0deg, 88%, 61%);
+  position: relative;
+}
+header .container ul li a.active::after {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: hsl(0deg, 88%, 61%);
+}
+header .container .user-bar li {
+  cursor: pointer;
+}
+header .aside-cart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 25em;
+  background-color: hsl(250deg, 60%, 98%);
+  padding: 1em;
+  box-shadow: -3px 0 3px hsla(0deg, 0%, 15%, 0.1);
+}
+header .aside-cart .close-btn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: xx-small;
+  margin-left: auto;
+  margin-bottom: 2em;
+  cursor: pointer;
+}
+header .aside-cart h2 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1.5em;
+  color: hsl(250deg, 8%, 15%);
+}
+header .aside-cart .chosen-product {
+  gap: 1em;
+}
+header .aside-cart .chosen-product .img {
+  width: 7em;
+  background-color: #fff;
+  padding: 0.5em;
+}
+header .aside-cart .chosen-product .details {
+  flex-basis: 100%;
+}
+header .aside-cart .chosen-product .details h3 {
+  text-transform: capitalize;
+  margin-bottom: 1em;
+}
+header .aside-cart .chosen-product .details .price {
+  color: hsl(0deg, 88%, 61%);
+  margin-bottom: 1em;
+}
+header .aside-cart .chosen-product .details .controls {
+  display: flex;
+  align-items: center;
+  font-size: 1.25em;
+  color: hsl(250deg, 8%, 35%);
+}
+header .aside-cart .chosen-product .details .controls .minus,
+header .aside-cart .chosen-product .details .controls .plus {
+  background-color: #fff;
+  padding: 0 12px;
+  border-radius: 5px;
+}
+header .aside-cart .chosen-product .details .controls .amount {
+  padding: 0 0.5em;
+}
+header .aside-cart .chosen-product .details .controls box-icon {
+  margin-left: auto;
 }
 
 /* finish Styling The Header*//*# sourceMappingURL=style.css.map */

@@ -14,42 +14,81 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body id="home">
-    <a href="#home" id="go-up"
-      ><box-icon name="up-arrow-alt" color="#fff"></box-icon
-    ></a>
+    <!-- =================== GO-UP ICON =================== -->
+    <a href="#home" id="go-up">
+      <box-icon name="up-arrow-alt" color="#fff"></box-icon>
+    </a>
+    <!-- =================== HEADER =================== -->
     <header>
       <div class="container">
         <h2>
-          <a href="#home">
+          <a href="#home" id="logo">
             <box-icon name="shopping-bags" type="solid"></box-icon> e-shop
           </a>
         </h2>
         <nav class="pages-bar">
           <ul>
-            <li><a href="">home</a></li>
-            <li><a href="">shop</a></li>
-            <li><a href="">cart</a></li>
-            <li><a href="">blog</a></li>
-            <li><a href="">faq's</a></li>
-            <li><a href="">contact</a></li>
+            <li class="d-nn"><box-icon name="x"></box-icon></li>
+            <li><a href="./index.html" class="active">home</a></li>
+            <li><a href="./shop.html">shop</a></li>
+            <li><a href="./cart.html">cart</a></li>
+            <li><a href="./blog.html">blog</a></li>
+            <li><a href="./faq.html">faq's</a></li>
+            <li><a href="./contact.html">contact</a></li>
           </ul>
         </nav>
         <ul class="user-bar">
-          <li>
-            <a href=""><box-icon name="user"></box-icon></a>
+          <li class="user-toggle">
+            <box-icon name="user"></box-icon>
           </li>
-          <li>
-            <a href=""><box-icon name="shopping-bag"></box-icon></a>
+          <li class="bag-toggle">
+            <box-icon name="shopping-bag"></box-icon>
+          </li>
+          <li class="menu-icon d-nn">
+            <box-icon name="grid-alt"></box-icon>
           </li>
         </ul>
       </div>
+      <!-- =================== CART =================== -->
+      <div class="aside-cart">
+        <div class="close-btn">
+          <box-icon name="x" size="md"></box-icon>
+        </div>
+        <h2>my cart</h2>
+        <div class="chosen-products">
+          <div class="chosen-product d-fl">
+            <div class="img">
+              <img src="./imgs/cart-1.png" alt="monto" />
+            </div>
+            <div class="details">
+              <h3 class="product-title">windbreaker</h3>
+              <span class="price d-bl">$12.00</span>
+              <div class="controls">
+                <span class="minus">&minus;</span>
+                <span class="amount">1</span>
+                <span class="plus">&plus;</span>
+                <box-icon name="trash" color="hsl(0, 88%, 61%)"></box-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="final-details">
+          <p class="chosen-products_number">
+            <span class="number"></span> item
+          </p>
+          <h2 class="final-cost"></h2>
+        </div>
+      </div>
+      <!-- =================== REGISTER =================== -->
+      <div class="aside-register"></div>
     </header>
     <div class="container">
+      <!-- =================== SLIDER OF INTERFACE =================== -->
       <div id="interface">
         <div class="slider-container">
           <div class="slide">
@@ -112,6 +151,7 @@
         </div>
         <ul class="slider-controls"></ul>
       </div>
+      <!-- =================== DISCOUNT SECTION =================== -->
       <div id="discount-section">
         <img src="./imgs/discount.png" alt="up to 50% of discount" />
         <div class="info">
@@ -119,6 +159,7 @@
           <a href="#">buy now</a>
         </div>
       </div>
+      <!-- =================== NEW ARRIVALS =================== -->
       <div id="new-arrivals">
         <h1>new arrivals</h1>
         <div class="new-products"></div>

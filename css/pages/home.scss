@@ -63,8 +63,8 @@
             @include same-anchore;
 
             &:first-child {
-              background-color: $alternative-bg-clr;
-              color: $alternative-clr;
+              background-color: $first-clr-alt;
+              color: $clr;
             }
           }
         }
@@ -96,10 +96,7 @@
   justify-content: space-evenly;
   background-color: #fff;
   border-radius: 3em;
-  margin: {
-    top: $margin;
-    bottom: $margin;
-  }
+  margin-bottom: $mb-3;
   padding: 1em 0;
 
   > * {
@@ -123,7 +120,7 @@
     }
 
     a {
-      @include same-anchore($alternative-clr, $alternative-bg-clr);
+      @include same-anchore($clr, $first-clr-alt);
       margin: auto;
     }
   }
@@ -131,9 +128,6 @@
 
 #new-arrivals {
   text-align: center;
-  padding: {
-    bottom: $padding;
-  }
   .new-products {
     height: 350px;
     width: 100%;
@@ -155,7 +149,7 @@
         color: gray;
       }
       del {
-        color: $main-clr;
+        color: orangered;
       }
     }
   }
