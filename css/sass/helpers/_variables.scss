@@ -1,5 +1,3 @@
-@use "./mixins" as *;
-
 // // // colors
 $clr: #eee;
 $title-clr: hsl(250, 8%, 15%);
@@ -27,14 +25,14 @@ $md-font: 500;
 $sm-bold-font: 600;
 $bold-font: 700;
 
-// // // Margins Bottom
-$mb-0-5: 0.5em;
-$mb-0-75: 0.75em;
-$mb-1: 1em;
-$mb-1-5: 1.5em;
-$mb-2: 2em;
-$mb-2-5: 2.5em;
-$mb-3: 3em;
+// // // Margins
+$mg-0-5: 0.5em;
+$mg-0-75: 0.75em;
+$mg-1: 1em;
+$mg-1-5: 1.5em;
+$mg-2: 2em;
+$mg-2-5: 2.5em;
+$mg-3: 3em;
 
 // // // Transition
 $main-transition: 0.3s;

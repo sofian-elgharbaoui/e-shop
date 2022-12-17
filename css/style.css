@@ -13,7 +13,7 @@ html {
 body {
   background-color: hsl(250deg, 60%, 98%);
   font-family: "Poppins", sans-serif;
-  height: 200vh;
+  min-height: 100vh;
 }
 
 ul {
@@ -58,7 +58,7 @@ button {
   width: 2.5em;
   height: 2.5em;
   border-radius: 0.5em;
-  background-color: hsl(0deg, 88%, 58%);
+  background-color: hsl(0deg, 88%, 61%);
   display: grid;
   place-content: center;
   position: fixed;
@@ -71,6 +71,9 @@ button {
 #go-up.visible {
   bottom: 2em;
   opacity: 1;
+}
+#go-up:hover {
+  background-color: hsl(0deg, 88%, 58%);
 }
 
 /* finish styling the goes-up button */
@@ -145,7 +148,7 @@ header {
   left: 0;
   width: 100%;
   height: 3.5em;
-  background-color: #fff;
+  background-color: hsl(250deg, 60%, 98%);
   transition: box-shadow 0.3s;
   z-index: 90;
 }
@@ -193,16 +196,79 @@ header .container .user-bar li {
   cursor: pointer;
 }
 header .aside-cart {
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: 0;
+  right: -26em;
   height: 100vh;
   width: 25em;
   background-color: hsl(250deg, 60%, 98%);
   padding: 1em;
+  transition: 0.3s;
   box-shadow: -3px 0 3px hsla(0deg, 0%, 15%, 0.1);
 }
-header .aside-cart .close-btn {
+header .aside-cart .chosen-products {
+  max-height: 65vh;
+  margin-bottom: 2em;
+  overflow: auto;
+}
+header .aside-cart .chosen-products .chosen-product {
+  height: 7em;
+  gap: 1em;
+}
+header .aside-cart .chosen-products .chosen-product:not(:last-of-type) {
+  margin-bottom: 1em;
+}
+header .aside-cart .chosen-products .chosen-product .img {
+  width: 7em;
+  height: 100%;
+  background-color: #fff;
+  padding: 0.5em;
+}
+header .aside-cart .chosen-products .chosen-product .img img {
+  display: block;
+}
+header .aside-cart .chosen-products .chosen-product .details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+}
+header .aside-cart .chosen-products .chosen-product .details h3 {
+  text-transform: capitalize;
+}
+header .aside-cart .chosen-products .chosen-product .details .price {
+  color: hsl(0deg, 88%, 61%);
+}
+header .aside-cart .chosen-products .chosen-product .details .controls {
+  display: flex;
+  align-items: center;
+  font-size: 1.25em;
+  color: hsl(250deg, 8%, 35%);
+}
+header .aside-cart .chosen-products .chosen-product .details .controls .minus,
+header .aside-cart .chosen-products .chosen-product .details .controls .plus {
+  background-color: #fff;
+  padding: 0 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+header .aside-cart .chosen-products .chosen-product .details .controls .amount {
+  padding: 0 0.5em;
+}
+header .aside-cart .chosen-products .chosen-product .details .controls box-icon {
+  margin-left: auto;
+}
+header .aside-cart .chosen-products .chosen-product .details .controls .minus,
+header .aside-cart .chosen-products .chosen-product .details .controls .plus,
+header .aside-cart .chosen-products .chosen-product .details .controls box-icon {
+  cursor: pointer;
+}
+header .aside-cart .final-details {
+  display: flex;
+  justify-content: space-between;
+}
+header .close-icon {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -211,48 +277,55 @@ header .aside-cart .close-btn {
   margin-bottom: 2em;
   cursor: pointer;
 }
-header .aside-cart h2 {
+header .close-icon + h2 {
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 1.5em;
   color: hsl(250deg, 8%, 15%);
 }
-header .aside-cart .chosen-product {
-  gap: 1em;
+header .aside-register {
+  position: fixed;
+  top: 0;
+  right: -26em;
+  height: 100vh;
+  width: 25em;
+  background-color: hsl(250deg, 60%, 98%);
+  padding: 1em;
+  transition: 0.3s;
+  box-shadow: -3px 0 3px hsla(0deg, 0%, 15%, 0.1);
 }
-header .aside-cart .chosen-product .img {
-  width: 7em;
+header .aside-register form input {
+  display: block;
+  width: 100%;
+  height: 4em;
+  margin-bottom: 1em;
   background-color: #fff;
-  padding: 0.5em;
+  outline: none;
+  border: none;
+  padding-left: 1.5em;
 }
-header .aside-cart .chosen-product .details {
-  flex-basis: 100%;
-}
-header .aside-cart .chosen-product .details h3 {
-  text-transform: capitalize;
-  margin-bottom: 1em;
-}
-header .aside-cart .chosen-product .details .price {
-  color: hsl(0deg, 88%, 61%);
-  margin-bottom: 1em;
-}
-header .aside-cart .chosen-product .details .controls {
+header .aside-register form input[type=submit] {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 4em;
+  padding: 0 2.5em;
+  border-radius: 0.5em;
   display: flex;
   align-items: center;
-  font-size: 1.25em;
-  color: hsl(250deg, 8%, 35%);
+  justify-content: center;
+  text-transform: uppercase;
+  background-color: hsl(0deg, 88%, 61%);
+  color: #eee;
+  cursor: pointer;
 }
-header .aside-cart .chosen-product .details .controls .minus,
-header .aside-cart .chosen-product .details .controls .plus {
-  background-color: #fff;
-  padding: 0 12px;
-  border-radius: 5px;
+header .aside-register form input[type=submit]:hover {
+  background-color: hsl(0deg, 88%, 58%);
 }
-header .aside-cart .chosen-product .details .controls .amount {
-  padding: 0 0.5em;
-}
-header .aside-cart .chosen-product .details .controls box-icon {
-  margin-left: auto;
+header .aside-register form button {
+  background-color: transparent;
+  border: none;
+  color: hsl(0deg, 88%, 61%);
 }
 
 /* finish Styling The Header*//*# sourceMappingURL=style.css.map */

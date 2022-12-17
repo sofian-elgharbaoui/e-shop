@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- css files -->
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/normilize.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/pages/home.css" />
-    <title>e-shop</title>
 
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,6 +17,8 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <title>e-shop</title>
   </head>
   <body id="home">
     <!-- =================== GO-UP ICON =================== -->
@@ -43,10 +45,10 @@
           </ul>
         </nav>
         <ul class="user-bar">
-          <li class="user-toggle">
+          <li class="user-icon">
             <box-icon name="user"></box-icon>
           </li>
-          <li class="bag-toggle">
+          <li class="bag-icon">
             <box-icon name="shopping-bag"></box-icon>
           </li>
           <li class="menu-icon d-nn">
@@ -56,7 +58,7 @@
       </div>
       <!-- =================== CART =================== -->
       <div class="aside-cart">
-        <div class="close-btn">
+        <div class="close-icon">
           <box-icon name="x" size="md"></box-icon>
         </div>
         <h2>my cart</h2>
@@ -81,14 +83,51 @@
           <p class="chosen-products_number">
             <span class="number"></span> item
           </p>
-          <h2 class="final-cost"></h2>
+          <h3 class="final-cost"></h3>
         </div>
       </div>
       <!-- =================== REGISTER =================== -->
-      <div class="aside-register"></div>
+      <div class="aside-register">
+        <div class="close-icon">
+          <box-icon name="x" size="md"></box-icon>
+        </div>
+        <h2>Login</h2>
+        <form action="" class="log-in-form">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Your Email"
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Your Password"
+          />
+          <input type="submit" value="Sign in" />
+          <p>You are not a member? <button>Sign up now</button></p>
+        </form>
+        <form action="" class="sign-up-form" hidden>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Your Email"
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Your Password"
+          />
+          <input type="submit" value="Sign in" />
+          <p>You are a member? <button>Sign in now</button></p>
+        </form>
+      </div>
     </header>
     <div class="container">
-      <!-- =================== SLIDER OF INTERFACE =================== -->
+      <!-- =================== SLIDER OF THE INTERFACE =================== -->
       <div id="interface">
         <div class="slider-container">
           <div class="slide">
@@ -115,7 +154,7 @@
               <img src="./imgs/slide-2.png" alt="T-shirt" />
             </div>
             <div class="info">
-              <h3>#2 top best due</h3>
+              <h3>#2 top best duo</h3>
               <h1>fall - winter 2022</h1>
               <p>
                 A specialist label creating luxury essentials. Ethically crafted
@@ -162,11 +201,14 @@
       <!-- =================== NEW ARRIVALS =================== -->
       <div id="new-arrivals">
         <h1>new arrivals</h1>
-        <div class="new-products"></div>
+        <div class="new-products swiper-container">
+          <div class="swiper-wrapper"></div>
+        </div>
       </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/dist/boxicons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
+    <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/main.js" type="module"></script>
   </body>
 </html>

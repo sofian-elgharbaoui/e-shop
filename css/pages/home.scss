@@ -3,7 +3,7 @@
 /* Start styling the home page */
 #interface {
   width: 100%;
-  height: calc(100vh - 3em);
+  min-height: calc(100vh - 3em);
   display: flex;
   flex-direction: column;
   place-items: center;
@@ -45,6 +45,7 @@
 
         h3 {
           text-transform: uppercase;
+          color: $title-clr;
         }
 
         h1 {
@@ -52,6 +53,9 @@
           width: 200px;
         }
 
+        p {
+          color: $text-clr;
+        }
         .product-actions {
           position: absolute;
           bottom: 10%;
@@ -60,33 +64,40 @@
           justify-content: space-between;
 
           a {
-            @include same-anchore;
+            @include sameAnchore;
 
-            &:first-child {
-              background-color: $first-clr-alt;
-              color: $clr;
+            &:nth-child(2) {
+              background-color: transparent;
+              color: #000;
+              font-weight: $md-font;
+              padding: 0 1em;
             }
           }
         }
       }
     }
   }
+}
+.swiper-container {
+  overflow: hidden;
+}
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: $mg-1;
+  gap: 5px;
 
-  .slider-controls {
-    display: flex;
-    gap: 5px;
+  span {
+    width: 1em;
+    height: 6px;
+    border-radius: 3px;
+    background-color: $text-clr;
+    transition: width $main-transition;
+    cursor: pointer;
 
-    li {
-      width: 1em;
-      height: 6px;
-      border-radius: 3px;
-      background-color: #aaa;
-      transition: width $main-transition;
-
-      &.active {
-        width: 2em;
-        height: 6px;
-      }
+    &.active {
+      background-color: $title-clr;
+      width: 2em;
     }
   }
 }
@@ -96,7 +107,7 @@
   justify-content: space-evenly;
   background-color: #fff;
   border-radius: 3em;
-  margin-bottom: $mb-3;
+  margin-bottom: $mg-3;
   padding: 1em 0;
 
   > * {
@@ -120,36 +131,49 @@
     }
 
     a {
-      @include same-anchore($clr, $first-clr-alt);
+      @include sameAnchore($clr, $first-clr-alt);
       margin: auto;
     }
   }
 }
 
 #new-arrivals {
+  margin: 5em 0;
   text-align: center;
+
+  h1 {
+    text-transform: uppercase;
+  }
+
   .new-products {
-    height: 350px;
-    width: 100%;
-    background-color: #fff;
-    border-radius: 3em;
-    display: flex;
-    gap: 1em;
+    background-color: $section-clr;
+    border-radius: 2em;
+    padding: 1em;
 
     .new-product {
-      height: 100%;
-      img {
-        width: 100%;
-        // display: block;
+      background-color: $body-clr;
+      border-radius: 1em;
+      .img img {
+        width: 80%;
       }
+
       h2 {
         text-transform: capitalize;
+
+        + span {
+          margin: $mg-0-5 0;
+        }
       }
-      span {
-        color: gray;
-      }
-      del {
-        color: orangered;
+
+      .b-a-price {
+        justify-content: center;
+        gap: 1em;
+        span {
+          color: gray;
+        }
+        del {
+          color: $first-clr;
+        }
       }
     }
   }

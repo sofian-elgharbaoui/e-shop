@@ -1,37 +1,32 @@
-import newProducts from "./newProducts.json" assert { type: "json" };
+import arrivalProducts from "./newProducts.json" assert { type: "json" };
 // Let me set the box-shadow for the header according to the sroll possition
 // And show the go-up button
 let header = $("header");
 let goUp = $("#go-up");
 
 window.onscroll = () => {
-  if (window.scrollY >= header.height()) {
+  if (window.scrollY >= header.height())
     header.css("box-shadow", "0 1px 3px #ddd");
-  } else {
-    header.css("box-shadow", "none");
-  }
+  else header.css("box-shadow", "none");
 
-  if (window.scrollY >= 500) {
-    goUp.addClass("visible");
-  } else {
-    goUp.removeClass("visible");
-  }
+  if (window.scrollY >= 500) goUp.addClass("visible");
+  else goUp.removeClass("visible");
 };
 
-// let me style the slider
+// // // SLIDER STYLE
 let allSlides = document.querySelectorAll(".slide");
 let slidesNumber = allSlides.length;
 let currentSlide = 1;
-let sliderControlsUp = $(".slider-controls");
-
+let sliderControlsUp = $("#interface .slider-controls");
+console.log(sliderControlsUp);
 for (let i = 1; i <= slidesNumber; i++) {
-  let liItem = $("<li></li>", {
+  let liItem = $("<span></span>", {
     "data-index": i,
   });
   sliderControlsUp.append(liItem);
 }
 
-let sliderControls = document.querySelectorAll(".slider-controls li");
+let sliderControls = document.querySelectorAll(".slider-controls span");
 
 let goToSlide;
 (goToSlide = function () {
@@ -46,7 +41,7 @@ let goToSlide;
   sliderControls[currentSlide - 1].classList.add("active");
 })();
 
-// the controles on the click event
+// // // the controles on the click event
 
 for (let i = 0; i < sliderControls.length; i++) {
   sliderControls[i].onclick = () => {
@@ -74,20 +69,79 @@ for (let i = 0; i < sliderControls.length; i++) {
   }
 })();
 
-console.log(newProducts);
+// // // SHOWING CART
+let bagIcon = $(".bag-icon");
+let asideCart = $(".aside-cart");
 
-// put the arrival products in there place
-let newArrivals = document.querySelector(".new-products");
+bagIcon.on("click", () => {
+  showAndHide(asideCart);
+});
 
-for (let i = 0; i < newProducts.length; i++) {
+// // // SHOWING LOGIN
+let userIcon = $(".user-icon");
+let asideRegister = $(".aside-register");
+
+userIcon.on("click", () => {
+  showAndHide(asideRegister);
+});
+
+function showAndHide(asideEl) {
+  asideEl.css("right", "0");
+  let closeIcon = $(".close-icon ");
+  closeIcon.on("click", (e) => {
+    $(e.currentTarget).closest(asideEl).css("right", " -26em");
+  });
+}
+
+// // // put the arrival products in there place
+let newArrivals = document.querySelector(".swiper-wrapper");
+
+for (let i = 0; i < arrivalProducts.length; i++) {
+  const arrivalProduct = arrivalProducts[i];
+
   let newProduct = document.createElement("div");
-  newProduct.id = newProducts[i].id;
-  newProduct.className = "new-product";
+  newProduct.id = arrivalProduct.id;
+  newProduct.className = "new-product swiper-slide";
   newProduct.innerHTML = `
-    <img src="${newProducts[i].img}"/>
-    <h2>${newProducts[i].name}</h2>
-    <span>${newProducts[i].type}</span>
-    <div><span>${newProducts[i].price}</span> <del>${newProducts[i]["previous-price"]}</del></div>
+  <a href="http://e-shop/shop.index/${arrivalProduct.name}">
+    <div class="img">
+      <img src="${arrivalProduct.img}"/>
+    </div>
+    <h2 class="name">${arrivalProduct.name}</h2>
+    <span class="type d-bl">${arrivalProduct.type}</span>
+    <div class="b-a-price d-fl">
+    <span class="price">${arrivalProduct.price}</span>
+      <del class="prev-price">${arrivalProduct.previousPrice}</del>
+    </div>
+  </a>
   `;
   newArrivals.appendChild(newProduct);
+}
+let swiperPagination = document.createElement("div");
+swiperPagination.className = "slider-controls";
+newArrivals.after(swiperPagination);
+
+let arrivalProductsSwiper = new Swiper(".new-products", {
+  slidesPerView: 4,
+  spaceBetween: 20,
+  pagination: {
+    el: ".slider-controls",
+    clickable: true,
+  },
+});
+
+let paginationControls = document.querySelectorAll(
+  "#new-arrivals .slider-controls .swiper-pagination-bullet"
+);
+bulletEffect(paginationControls);
+
+function bulletEffect(controls) {
+  for (let i = 0; i < controls.length; i++) {
+    controls[i].onclick = (e) => {
+      controls.forEach((bullet) => {
+        bullet.classList.remove("active");
+      });
+      e.currentTarget.classList.add("active");
+    };
+  }
 }

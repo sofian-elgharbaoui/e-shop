@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 // media querys mixin
 @mixin breakpoint($point) {
   @if $point == xs {
@@ -27,14 +29,36 @@
   }
 }
 
-@mixin same-anchore($clr: black, $bg-clr: rgba(0, 0, 0, 0)) {
-  display: block;
+@mixin sameAnchore(
+  $clr: $clr,
+  $bg-clr: $first-clr,
+  $hv-bg-clr: $first-clr-alt
+) {
   width: fit-content;
-  padding: 1.5em 3em;
-  border-radius: 1em;
+  height: 4em;
+  padding: 0 2.5em;
+  border-radius: 0.5em;
   display: flex;
   align-items: center;
+  justify-content: center;
   text-transform: uppercase;
   background-color: $bg-clr;
   color: $clr;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hv-bg-clr;
+  }
+}
+
+@mixin styleAside {
+  position: fixed;
+  top: 0;
+  right: -26em;
+  height: 100vh;
+  width: 25em;
+  background-color: $body-clr;
+  padding: 1em;
+  transition: $main-transition;
+  box-shadow: -3px 0 3px $shadow;
 }

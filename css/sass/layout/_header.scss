@@ -1,3 +1,4 @@
+@use "../helpers/mixins" as *;
 @use "../helpers/variables" as *;
 
 /* Start Styling The Header*/
@@ -7,7 +8,7 @@ header {
   left: 0;
   width: 100%;
   height: 3.5em;
-  background-color: $section-clr;
+  background-color: $body-clr;
   transition: box-shadow $main-transition;
   z-index: $z-header;
 
@@ -42,7 +43,6 @@ header {
           &.active {
             color: $first-clr;
             position: relative;
-            // font-size: $normal-font-size;
           }
 
           &.active::after {
@@ -67,72 +67,124 @@ header {
   }
 
   .aside-cart {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 25em;
-    background-color: $body-clr;
-    padding: 1em;
-    box-shadow: -3px 0 3px $shadow;
+    @include styleAside;
 
-    .close-btn {
-      width: fit-content;
-      font-size: xx-small;
-      margin: {
-        left: auto;
-        bottom: $mb-2;
+    .chosen-products {
+      // min-height: 20vh;
+      max-height: 65vh;
+      margin-bottom: $mg-2;
+      overflow: auto;
+
+      .chosen-product {
+        height: 7em;
+        gap: 1em;
+        &:not(:last-of-type) {
+          margin-bottom: $mg-1;
+        }
+
+        .img {
+          width: 7em;
+          height: 100%;
+          background-color: $section-clr;
+          padding: 0.5em;
+
+          img {
+            display: block;
+          }
+        }
+
+        .details {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 1em;
+
+          h3 {
+            text-transform: capitalize;
+          }
+
+          .price {
+            color: $first-clr;
+          }
+
+          .controls {
+            display: flex;
+            align-items: center;
+            font-size: $h3-font-size;
+            color: $text-clr;
+
+            .minus,
+            .plus {
+              background-color: $section-clr;
+              padding: 0 12px;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+
+            .amount {
+              padding: 0 0.5em;
+            }
+
+            box-icon {
+              margin-left: auto;
+            }
+
+            .minus,
+            .plus,
+            box-icon {
+              cursor: pointer;
+            }
+          }
+        }
       }
-      cursor: pointer;
     }
 
-    h2 {
+    .final-details {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .close-icon {
+    width: fit-content;
+    font-size: xx-small;
+    margin: {
+      left: auto;
+      bottom: $mg-2;
+    }
+    cursor: pointer;
+
+    + h2 {
       text-transform: uppercase;
       text-align: center;
-      margin-bottom: $mb-1-5;
+      margin-bottom: $mg-1-5;
       color: $title-clr;
     }
+  }
 
-    .chosen-product {
-      gap: 1em;
-      .img {
-        width: 7em;
+  .aside-register {
+    @include styleAside;
+
+    form {
+      input {
+        display: block;
+        width: 100%;
+        height: 4em;
+        margin-bottom: $mg-1;
         background-color: $section-clr;
-        padding: 0.5em;
+        outline: none;
+        border: none;
+        padding-left: 1.5em;
+
+        &[type="submit"] {
+          @include sameAnchore;
+        }
       }
-
-      .details {
-        flex-basis: 100%;
-        h3 {
-          text-transform: capitalize;
-          margin-bottom: $mb-1;
-        }
-
-        .price {
-          color: $first-clr;
-          margin-bottom: $mb-1;
-        }
-
-        .controls {
-          display: flex;
-          align-items: center;
-          // padding: 0 0.5em;
-          font-size: $h3-font-size;
-          color: $text-clr;
-
-          .minus,
-          .plus {
-            background-color: $section-clr;
-            padding: 0 12px;
-            border-radius: 5px;
-          }
-          .amount {
-            padding: 0 0.5em;
-          }
-          box-icon {
-            margin-left: auto;
-          }
-        }
+      button {
+        background-color: transparent;
+        border: none;
+        color: $first-clr;
       }
     }
   }

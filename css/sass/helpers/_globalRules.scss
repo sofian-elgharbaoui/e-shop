@@ -1,5 +1,5 @@
-@use "../helpers/variables" as *;
-@use "../helpers/mixins" as *;
+@use "./variables" as *;
+@use "./mixins" as *;
 
 *,
 *::before,
@@ -16,7 +16,7 @@ html {
 body {
   background-color: $body-clr;
   font-family: $body-font;
-  height: 200vh;
+  min-height: 100vh;
 }
 
 ul {
@@ -60,7 +60,7 @@ button {
   width: 2.5em;
   height: 2.5em;
   border-radius: 0.5em;
-  background-color: $first-clr-alt;
+  background-color: $first-clr;
   display: grid;
   place-content: center;
   position: fixed;
@@ -73,6 +73,10 @@ button {
   &.visible {
     bottom: 2em;
     opacity: 1;
+  }
+
+  &:hover {
+    background-color: $first-clr-alt;
   }
 }
 /* finish styling the goes-up button */
