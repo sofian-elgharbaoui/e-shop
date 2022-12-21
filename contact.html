@@ -6,5 +6,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Page</title>
   </head>
-  <body></body>
+  <body id="home">
+    <!-- =================== GO-UP ICON =================== -->
+    <a href="#home" id="go-up">
+      <i class="bx bx-up-arrow-alt bx-sm"></i>
+    </a>
+    <!-- =================== HEADER =================== -->
+    <header>
+      <div class="container">
+        <h2>
+          <a href="./index.html" id="logo">
+            <i class="bx bxs-shopping-bags bx-sm"></i> e-shop
+          </a>
+        </h2>
+        <nav class="pages-bar">
+          <ul>
+            <li><a href="./index.html" class="active">home</a></li>
+            <li><a href="./shop.html">shop</a></li>
+            <li><a href="./cart.html">cart</a></li>
+            <li><a href="./blog.html">blog</a></li>
+            <li><a href="./faq.html">faq's</a></li>
+            <li><a href="./contact.html">contact</a></li>
+          </ul>
+        </nav>
+        <ul class="user-bar">
+          <li class="user-icon">
+            <i class="bx bx-user bx-sm"></i>
+          </li>
+          <li class="bag-icon">
+            <i class="bx bx-shopping-bag bx-sm"></i>
+          </li>
+          <li class="menu-icon d-nn">
+            <i class="bx bx-grid-alt bx-sm"></i>
+          </li>
+        </ul>
+      </div>
+      <!-- =================== REGISTER =================== -->
+      <div class="aside-register">
+        <div class="close-icon">
+          <i class="bx bx-x bx-md"></i>
+        </div>
+        <h2>Login</h2>
+        <form action="" class="log-in-form">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Your Email"
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Your Password"
+          />
+          <input type="submit" value="Sign in" />
+          <p>You are not a member? <button>Sign up now</button></p>
+        </form>
+        <form action="" class="sign-up-form" hidden>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Your Email"
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Your Password"
+          />
+          <input type="submit" value="Sign in" />
+          <p>You are a member? <button>Sign in now</button></p>
+        </form>
+      </div>
+      <!-- =================== CART =================== -->
+      <div class="aside-cart">
+        <div class="close-icon">
+          <i class="bx bx-x bx-sm"></i>
+        </div>
+        <h2>my cart</h2>
+        <div class="chosen-products">
+          <div class="chosen-product d-fl">
+            <div class="img">
+              <img src="./imgs/cart-1.png" alt="monto" />
+            </div>
+            <div class="details">
+              <h3 class="product-title">windbreaker</h3>
+              <span class="price d-bl">$12.00</span>
+              <div class="controls">
+                <span class="minus">&minus;</span>
+                <span class="amount">1</span>
+                <span class="plus">&plus;</span>
+                <i class="bx bx-trash bx-sm"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="final-details">
+          <p class="chosen-products_number">
+            <span class="number"></span> item
+          </p>
+          <h3 class="final-cost"></h3>
+        </div>
+      </div>
+      <!-- =================== pages-bar =================== -->
+      <nav class="aside-pages-bar">
+        <ul>
+          <li class="close-icon"><i class="bx bx-x bx-md active"></i></li>
+          <li><a href="./index.html" class="active">home</a></li>
+          <li><a href="./shop.html">shop</a></li>
+          <li><a href="./cart.html">cart</a></li>
+          <li><a href="./blog.html">blog</a></li>
+          <li><a href="./faq.html">faq's</a></li>
+          <li><a href="./contact.html">contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- =================== FOOTER SECTION =================== -->
+    <footer>
+      <div class="container">
+        <div>
+          <h2 class="logo">
+            <a href="./index.html" id="logo">
+              <i class="bx bxs-shopping-bags bx-sm" type="solid"></i> e-shop
+            </a>
+          </h2>
+          <p>
+            Enjoy the biggest sale <br />
+            of your life
+          </p>
+          <div class="social-media">
+            <a href=""><i class="bx bxl-facebook bx-sm"></i></a>
+            <a href=""><i class="bx bxl-twitter bx-sm"></i></a>
+            <a href=""><i class="bx bxl-instagram bx-sm"></i></a>
+          </div>
+        </div>
+        <div class="about">
+          <h2>About</h2>
+          <a href="">about us</a>
+          <a href="">customer support</a>
+          <a href="">support center</a>
+        </div>
+        <div class="our-services">
+          <h2>our Services</h2>
+          <a href="">shop</a>
+          <a href="">discounts</a>
+          <a href="">shipping mode</a>
+        </div>
+        <div class="our-company">
+          <h2>our Company</h2>
+          <a href="">register</a>
+          <a href="">contact us</a>
+          <a href="">about us</a>
+        </div>
+      </div>
+      <p>
+        &copy; coded with <i class="bx bx-heart"></i> by
+        <a href="https://sofian-elgharbaoui.github.io/personal_website/"
+          >SoufianeElghabraoui</a
+        >
+        - All Rights Reserved
+      </p>
+    </footer>
+  </body>
 </html>

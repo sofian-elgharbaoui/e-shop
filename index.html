@@ -4,8 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- css files -->
+
+    <!-- swiper file -->
     <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+
+    <!-- boxicons file -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- css files -->
     <link rel="stylesheet" href="./css/normilize.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/pages/home.css" />
@@ -23,19 +32,18 @@
   <body id="home">
     <!-- =================== GO-UP ICON =================== -->
     <a href="#home" id="go-up">
-      <box-icon name="up-arrow-alt" color="#fff"></box-icon>
+      <i class="bx bx-up-arrow-alt bx-sm"></i>
     </a>
     <!-- =================== HEADER =================== -->
     <header>
       <div class="container">
         <h2>
           <a href="#home" id="logo">
-            <box-icon name="shopping-bags" type="solid"></box-icon> e-shop
+            <i class="bx bxs-shopping-bags bx-sm"></i> e-shop
           </a>
         </h2>
         <nav class="pages-bar">
           <ul>
-            <li class="d-nn"><box-icon name="x"></box-icon></li>
             <li><a href="./index.html" class="active">home</a></li>
             <li><a href="./shop.html">shop</a></li>
             <li><a href="./cart.html">cart</a></li>
@@ -46,50 +54,20 @@
         </nav>
         <ul class="user-bar">
           <li class="user-icon">
-            <box-icon name="user"></box-icon>
+            <i class="bx bx-user bx-sm"></i>
           </li>
           <li class="bag-icon">
-            <box-icon name="shopping-bag"></box-icon>
+            <i class="bx bx-shopping-bag bx-sm"></i>
           </li>
           <li class="menu-icon d-nn">
-            <box-icon name="grid-alt"></box-icon>
+            <i class="bx bx-grid-alt bx-sm"></i>
           </li>
         </ul>
-      </div>
-      <!-- =================== CART =================== -->
-      <div class="aside-cart">
-        <div class="close-icon">
-          <box-icon name="x" size="md"></box-icon>
-        </div>
-        <h2>my cart</h2>
-        <div class="chosen-products">
-          <div class="chosen-product d-fl">
-            <div class="img">
-              <img src="./imgs/cart-1.png" alt="monto" />
-            </div>
-            <div class="details">
-              <h3 class="product-title">windbreaker</h3>
-              <span class="price d-bl">$12.00</span>
-              <div class="controls">
-                <span class="minus">&minus;</span>
-                <span class="amount">1</span>
-                <span class="plus">&plus;</span>
-                <box-icon name="trash" color="hsl(0, 88%, 61%)"></box-icon>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="final-details">
-          <p class="chosen-products_number">
-            <span class="number"></span> item
-          </p>
-          <h3 class="final-cost"></h3>
-        </div>
       </div>
       <!-- =================== REGISTER =================== -->
       <div class="aside-register">
         <div class="close-icon">
-          <box-icon name="x" size="md"></box-icon>
+          <i class="bx bx-x bx-md"></i>
         </div>
         <h2>Login</h2>
         <form action="" class="log-in-form">
@@ -125,9 +103,52 @@
           <p>You are a member? <button>Sign in now</button></p>
         </form>
       </div>
+      <!-- =================== CART =================== -->
+      <div class="aside-cart">
+        <div class="close-icon">
+          <i class="bx bx-x bx-sm"></i>
+        </div>
+        <h2>my cart</h2>
+        <div class="chosen-products">
+          <div class="chosen-product d-fl">
+            <div class="img">
+              <img src="./imgs/cart-1.png" alt="monto" />
+            </div>
+            <div class="details">
+              <h3 class="product-title">windbreaker</h3>
+              <span class="price d-bl">$12.00</span>
+              <div class="controls">
+                <span class="minus">&minus;</span>
+                <span class="amount">1</span>
+                <span class="plus">&plus;</span>
+                <i class="bx bx-trash bx-sm"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="final-details">
+          <p class="chosen-products_number">
+            <span class="number"></span> item
+          </p>
+          <h3 class="final-cost"></h3>
+        </div>
+      </div>
+      <!-- =================== pages-bar =================== -->
+      <nav class="aside-pages-bar">
+        <ul>
+          <li class="close-icon"><i class="bx bx-x bx-md active"></i></li>
+          <li><a href="./index.html" class="active">home</a></li>
+          <li><a href="./shop.html">shop</a></li>
+          <li><a href="./cart.html">cart</a></li>
+          <li><a href="./blog.html">blog</a></li>
+          <li><a href="./faq.html">faq's</a></li>
+          <li><a href="./contact.html">contact</a></li>
+        </ul>
+      </nav>
     </header>
+
     <div class="container">
-      <!-- =================== SLIDER OF THE INTERFACE =================== -->
+      <!-- =================== SLIDER OF THE INTERFACE SECTION =================== -->
       <div id="interface">
         <div class="slider-container">
           <div class="slide">
@@ -144,7 +165,7 @@
               <div class="product-actions">
                 <a href="#">buy now</a>
                 <a href="#"
-                  >veiw details <box-icon name="chevron-right"></box-icon
+                  >veiw details <i class="bx bx-chevron-right bx-md"></i
                 ></a>
               </div>
             </div>
@@ -163,7 +184,7 @@
               <div class="product-actions">
                 <a href="#">buy now</a>
                 <a href="#"
-                  >veiw details <box-icon name="chevron-right"></box-icon
+                  >veiw details <i class="bx bx-chevron-right bx-md"></i
                 ></a>
               </div>
             </div>
@@ -181,34 +202,122 @@
               </p>
               <div class="product-actions">
                 <a href="#">buy now</a>
-                <a href="#"
-                  >veiw details <box-icon name="chevron-right"></box-icon
-                ></a>
+                <a href="#">
+                  veiw details <i class="bx bx-chevron-right bx-md"></i>
+                </a>
               </div>
             </div>
           </div>
         </div>
         <ul class="slider-controls"></ul>
       </div>
-      <!-- =================== DISCOUNT SECTION =================== -->
-      <div id="discount-section">
-        <img src="./imgs/discount.png" alt="up to 50% of discount" />
-        <div class="info">
-          <h1>50% discount on new products</h1>
-          <a href="#">buy now</a>
+
+      <!-- =================== DISCOUNT SECTION SECTION =================== -->
+      <div id="discount-section" class="section_padding">
+        <div>
+          <img src="./imgs/discount.png" alt="up to 50% of discount" />
+          <div class="info">
+            <h1 class="section_title">50% discount on new products</h1>
+            <a href="#">buy now</a>
+          </div>
         </div>
       </div>
-      <!-- =================== NEW ARRIVALS =================== -->
-      <div id="new-arrivals">
-        <h1>new arrivals</h1>
+
+      <!-- =================== NEW ARRIVALS SECTION =================== -->
+      <div id="new-arrivals" class="section_padding">
+        <h1 class="section_title">new arrivals</h1>
         <div class="new-products swiper-container">
           <div class="swiper-wrapper"></div>
         </div>
       </div>
+
+      <!-- =================== ORDER STEPS SECTION =================== -->
+      <div id="order-steps" class="section_padding">
+        <h1 class="section_title">how to order products from e-shop</h1>
+        <div class="order-system">
+          <div>
+            <h1>01</h1>
+            <h2>choose products</h2>
+            <p>we have several verieties products you can choose from.</p>
+          </div>
+          <div>
+            <h1>02</h1>
+            <h2>place an order</h2>
+            <p>
+              once your order is set, we move to the next step which is the
+              shipping.
+            </p>
+          </div>
+          <div>
+            <h1>03</h1>
+            <h2>get order delivered</h2>
+            <p>
+              out delivery process is easy, you receive the order direct to your
+              home.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- =================== NEWS LETTER SECTION =================== -->
+      <div id="news-letter" class="section_padding">
+        <h1 class="breadcrumb_title">our Newsletter</h1>
+        <p>promotion new products and sales. directly to your inbox</p>
+        <form action="" method="post">
+          <input type="email" name="email" placeholder="Enter Your Email" />
+          <input type="submit" value="Subcribe" />
+        </form>
+      </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/dist/boxicons.js"></script>
+    <!-- =================== FOOTER SECTION =================== -->
+    <footer>
+      <div class="container">
+        <div>
+          <h2 class="logo">
+            <a href="#home" id="logo">
+              <i class="bx bxs-shopping-bags bx-sm" type="solid"></i> e-shop
+            </a>
+          </h2>
+          <p>
+            Enjoy the biggest sale <br />
+            of your life
+          </p>
+          <div class="social-media">
+            <a href=""><i class="bx bxl-facebook bx-sm"></i></a>
+            <a href=""><i class="bx bxl-twitter bx-sm"></i></a>
+            <a href=""><i class="bx bxl-instagram bx-sm"></i></a>
+          </div>
+        </div>
+        <div class="about">
+          <h2>About</h2>
+          <a href="">about us</a>
+          <a href="">customer support</a>
+          <a href="">support center</a>
+        </div>
+        <div class="our-services">
+          <h2>our Services</h2>
+          <a href="">shop</a>
+          <a href="">discounts</a>
+          <a href="">shipping mode</a>
+        </div>
+        <div class="our-company">
+          <h2>our Company</h2>
+          <a href="">register</a>
+          <a href="">contact us</a>
+          <a href="">about us</a>
+        </div>
+      </div>
+      <p>
+        &copy; coded with <i class="bx bx-heart"></i> by
+        <a href="https://sofian-elgharbaoui.github.io/personal_website/"
+          >SoufianeElghabraoui</a
+        >
+        - All Rights Reserved
+      </p>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
-    <script src="./js/main.js" type="module"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/home.js" type="module"></script>
   </body>
 </html>

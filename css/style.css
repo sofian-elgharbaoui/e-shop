@@ -55,12 +55,10 @@ button {
 /* finish styling the scrollBar */
 /* start styling the goes-up button */
 #go-up {
-  width: 2.5em;
-  height: 2.5em;
+  padding: 0.4em 0.5em;
   border-radius: 0.5em;
-  background-color: hsl(0deg, 88%, 61%);
-  display: grid;
-  place-content: center;
+  background-color: hsl(7deg, 88%, 61%);
+  color: #eee;
   position: fixed;
   right: 2em;
   bottom: -3em;
@@ -73,12 +71,12 @@ button {
   opacity: 1;
 }
 #go-up:hover {
-  background-color: hsl(0deg, 88%, 58%);
+  background-color: hsl(7deg, 88%, 58%);
 }
 
 /* finish styling the goes-up button */
 .section_padding {
-  padding: 7em 0 2em;
+  padding: 5em 2em;
 }
 
 .section_title,
@@ -116,12 +114,12 @@ button {
 }
 @media (min-width: 576px) and (max-width: 767px) {
   .container {
-    width: 450px;
+    width: 550px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .container {
-    width: 720px;
+    width: 750px;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -129,7 +127,7 @@ button {
     width: 960px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 1399px) {
   .container {
     width: 1140px;
   }
@@ -162,26 +160,36 @@ header .container #logo {
   display: block;
   font-weight: 700;
 }
-header .container ul {
+@media (max-width: 575px) {
+  header .container .pages-bar {
+    display: none;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  header .container .pages-bar {
+    display: none;
+  }
+}
+header ul {
   font-weight: 500;
   display: flex;
   align-items: center;
   gap: 1.5em;
   text-transform: capitalize;
 }
-header .container ul li {
+header ul li {
   height: 100%;
 }
-header .container ul li a {
+header ul li a {
   height: 2em;
   display: flex;
   align-items: center;
 }
-header .container ul li a:hover, header .container ul li a.active {
-  color: hsl(0deg, 88%, 61%);
+header ul li a:hover, header ul li a.active {
+  color: hsl(7deg, 88%, 61%);
   position: relative;
 }
-header .container ul li a.active::after {
+header ul li a.active::after {
   content: "";
   width: 3px;
   height: 3px;
@@ -190,10 +198,34 @@ header .container ul li a.active::after {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: hsl(0deg, 88%, 61%);
+  background-color: hsl(7deg, 88%, 58%);
 }
-header .container .user-bar li {
+header ul.user-bar li {
   cursor: pointer;
+}
+@media (max-width: 575px) {
+  header ul.user-bar li {
+    display: block;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  header ul.user-bar li {
+    display: block;
+  }
+}
+header .aside-pages-bar {
+  position: fixed;
+  top: 0;
+  right: -26em;
+  height: 100vh;
+  width: 25em;
+  background-color: hsl(250deg, 60%, 98%);
+  padding: 1em;
+  transition: 0.3s;
+  box-shadow: -3px 0 3px hsla(0deg, 0%, 15%, 0.1);
+}
+header .aside-pages-bar ul {
+  flex-direction: column;
 }
 header .aside-cart {
   position: fixed;
@@ -238,11 +270,10 @@ header .aside-cart .chosen-products .chosen-product .details h3 {
   text-transform: capitalize;
 }
 header .aside-cart .chosen-products .chosen-product .details .price {
-  color: hsl(0deg, 88%, 61%);
+  color: hsl(7deg, 88%, 61%);
 }
 header .aside-cart .chosen-products .chosen-product .details .controls {
   display: flex;
-  align-items: center;
   font-size: 1.25em;
   color: hsl(250deg, 8%, 35%);
 }
@@ -251,17 +282,20 @@ header .aside-cart .chosen-products .chosen-product .details .controls .plus {
   background-color: #fff;
   padding: 0 12px;
   border-radius: 5px;
-  cursor: pointer;
 }
 header .aside-cart .chosen-products .chosen-product .details .controls .amount {
   padding: 0 0.5em;
 }
-header .aside-cart .chosen-products .chosen-product .details .controls box-icon {
+header .aside-cart .chosen-products .chosen-product .details .controls .bx-trash {
   margin-left: auto;
+  color: hsl(7deg, 88%, 61%);
+}
+header .aside-cart .chosen-products .chosen-product .details .controls .bx-trash:hover {
+  color: hsl(7deg, 88%, 58%);
 }
 header .aside-cart .chosen-products .chosen-product .details .controls .minus,
 header .aside-cart .chosen-products .chosen-product .details .controls .plus,
-header .aside-cart .chosen-products .chosen-product .details .controls box-icon {
+header .aside-cart .chosen-products .chosen-product .details .controls .bx-trash {
   cursor: pointer;
 }
 header .aside-cart .final-details {
@@ -308,24 +342,68 @@ header .aside-register form input[type=submit] {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  height: 4em;
-  padding: 0 2.5em;
-  border-radius: 0.5em;
+  padding: 1.5em 2.5em;
+  border-radius: 0.3em;
+  text-transform: uppercase;
+  background-color: hsl(7deg, 88%, 61%);
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  background-color: hsl(0deg, 88%, 61%);
   color: #eee;
   cursor: pointer;
 }
 header .aside-register form input[type=submit]:hover {
-  background-color: hsl(0deg, 88%, 58%);
+  background-color: hsl(7deg, 88%, 58%);
+}
+@media (max-width: 767px) {
+  header .aside-register form input[type=submit] {
+    font-size: 0.875em;
+  }
 }
 header .aside-register form button {
   background-color: transparent;
   border: none;
-  color: hsl(0deg, 88%, 61%);
+  color: hsl(7deg, 88%, 61%);
 }
 
-/* finish Styling The Header*//*# sourceMappingURL=style.css.map */
+/* finish Styling The Header*/
+footer {
+  box-shadow: 0 0px 5px hsla(0deg, 0%, 15%, 0.1);
+}
+footer .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1em;
+  padding: 2em 15px 2.5em;
+}
+footer .container div .logo,
+footer .container div .logo a {
+  margin-top: 0;
+}
+footer .container div .social-media {
+  display: flex;
+  gap: 0.5em;
+}
+footer .container div a {
+  display: block;
+  margin: 1em 0;
+  transition: color 0.3s;
+  color: hsl(250deg, 8%, 15%);
+}
+footer .container div a:hover {
+  color: #000;
+}
+footer .container p,
+footer .container .about a,
+footer .container .our-services a,
+footer .container .our-company a {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+footer > p {
+  text-align: center;
+  padding: 0.5em;
+}
+footer > p a,
+footer > p .bx {
+  color: hsl(7deg, 88%, 61%);
+}/*# sourceMappingURL=style.css.map */

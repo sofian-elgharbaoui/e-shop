@@ -1,1 +1,162 @@
-/*# sourceMappingURL=shop.css.map */
+.shop-container {
+  margin: 5em 0;
+}
+.shop-container .container > h1,
+.shop-container .container > h2 {
+  text-align: center;
+}
+.shop-container .container > h2 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.shop-container .container > .our-shop {
+  grid-template-columns: 220px 1fr;
+  gap: 30px;
+}
+.shop-container .container > .our-shop .select-filters {
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 1em;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+.shop-container .container > .our-shop .select-filters h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.shop-container .container > .our-shop .select-filters > div {
+  margin: 2em 0;
+}
+.shop-container .container > .our-shop .select-filters > div h3 {
+  padding-bottom: 0.5em;
+}
+.shop-container .container > .our-shop .select-filters > div div {
+  display: flex;
+  gap: 0.5em;
+  padding: 5px;
+}
+.shop-container .container > .our-shop .select-filters > div div span {
+  margin-left: auto;
+}
+.shop-container .container > .our-shop .all-products {
+  padding-bottom: 3em;
+  position: relative;
+}
+.shop-container .container > .our-shop .all-products .all-slides-wrapper {
+  position: relative;
+  height: calc(69em + 60px);
+  text-align: center;
+}
+.shop-container .container > .our-shop .all-products .all-slides-wrapper .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, calc(33.3333333333% - 20px));
+  align-content: start;
+  gap: 30px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.shop-container .container > .our-shop .all-products .all-slides-wrapper .slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+.shop-container .container > .our-shop .all-products .all-slides-wrapper .slide .a-product {
+  background-color: #fff;
+  border-radius: 1em;
+  overflow: hidden;
+  height: 23em;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.shop-container .container > .our-shop .all-products .all-slides-wrapper .slide .a-product::before {
+  content: "new";
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  padding: 2px 6px;
+  background-color: hsl(7deg, 88%, 61%);
+  color: #eee;
+  border-radius: 5px;
+}
+.shop-container .container > .our-shop .all-products .all-slides-wrapper .slide .a-product .img {
+  position: relative;
+  flex-basis: calc(100% - 120px);
+}
+.shop-container .container > .our-shop .all-products .all-slides-wrapper .slide .a-product .img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  height: 90%;
+}
+.shop-container .container > .our-shop .all-products .all-slides-wrapper .slide .a-product .info {
+  flex-basis: 120px;
+  justify-self: flex-end;
+}
+.shop-container .container > .our-shop .all-products .all-slides-wrapper .slide .a-product .info h2 {
+  text-transform: capitalize;
+}
+.shop-container .container > .our-shop .all-products .all-slides-wrapper .slide .a-product .info h2 + span {
+  margin: 0.5em 0;
+}
+.shop-container .container > .our-shop .all-products .all-slides-wrapper .slide .a-product .info .b-a-price {
+  justify-content: center;
+  gap: 1em;
+}
+.shop-container .container > .our-shop .all-products .all-slides-wrapper .slide .a-product .info .b-a-price span {
+  color: gray;
+  font-weight: 500;
+}
+.shop-container .container > .our-shop .all-products .all-slides-wrapper .slide .a-product .info .b-a-price del {
+  color: hsl(7deg, 88%, 61%);
+}
+.shop-container .container > .our-shop .all-products .all-slides-wrapper .slide .a-product .info .cart {
+  display: block;
+  width: 2.3em;
+  margin-left: auto;
+  padding: 0.5em;
+  background-color: hsl(7deg, 88%, 61%);
+  color: #eee;
+  border-top-left-radius: 1em;
+  position: relative;
+  right: -3em;
+  transition: 0.3s;
+}
+.shop-container .container > .our-shop .all-products .all-slides-wrapper .slide .a-product .info .cart .bx-cart-alt {
+  font-size: 1.3em;
+}
+.shop-container .container > .our-shop .all-products .all-slides-wrapper .slide .a-product:hover .cart {
+  right: 0;
+}
+.shop-container .container > .our-shop .all-products .all-products-pagination {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  translate: -50% 0;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+.shop-container .container > .our-shop .all-products .all-products-pagination span {
+  width: 2em;
+  height: 2em;
+  border-radius: 40%;
+  background-color: hsl(250deg, 8%, 35%);
+  opacity: 1;
+  transition: width 0.3s;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  display: grid;
+  place-content: center;
+}
+.shop-container .container > .our-shop .all-products .all-products-pagination span.active {
+  background-color: hsl(250deg, 8%, 15%);
+}/*# sourceMappingURL=shop.css.map */

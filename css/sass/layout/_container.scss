@@ -11,10 +11,10 @@
   }
 
   @include breakpoint(sm) {
-    width: 450px;
+    width: 550px;
   }
   @include breakpoint(md) {
-    width: 720px;
+    width: 750px;
   }
   @include breakpoint(lg) {
     width: 960px;

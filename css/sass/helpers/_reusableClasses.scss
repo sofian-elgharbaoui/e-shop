@@ -1,7 +1,7 @@
 @use "./variables" as *;
 
 .section_padding {
-  padding: 7em 0 2em;
+  padding: $mg-5 2em;
 }
 
 .section_title,

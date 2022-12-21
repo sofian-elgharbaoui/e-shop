@@ -57,12 +57,10 @@ button {
 /* finish styling the scrollBar */
 /* start styling the goes-up button */
 #go-up {
-  width: 2.5em;
-  height: 2.5em;
+  padding: 0.4em 0.5em;
   border-radius: 0.5em;
   background-color: $first-clr;
-  display: grid;
-  place-content: center;
+  color: $clr;
   position: fixed;
   right: 2em;
   bottom: -3em;

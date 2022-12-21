@@ -20,55 +20,75 @@ header {
 
     #logo {
       display: block;
-      // align-items: center;
-      // gap: 0.5em;
       font-weight: $bold-font;
     }
 
-    ul {
-      font-weight: $md-font;
-      display: flex;
-      align-items: center;
-      gap: 1.5em;
-      text-transform: capitalize;
+    .pages-bar {
+      @include breakpoint(xs) {
+        display: none;
+      }
+      @include breakpoint(sm) {
+        display: none;
+      }
+    }
+  }
 
-      li {
-        height: 100%;
-        a {
-          height: 2em;
-          display: flex;
-          align-items: center;
+  ul {
+    font-weight: $md-font;
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    text-transform: capitalize;
 
-          &:hover,
-          &.active {
-            color: $first-clr;
-            position: relative;
-          }
+    li {
+      height: 100%;
+      a {
+        height: 2em;
+        display: flex;
+        align-items: center;
 
-          &.active::after {
-            content: "";
-            width: 3px;
-            height: 3px;
-            border-radius: 50%;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: $first-clr;
-          }
+        &:hover,
+        &.active {
+          color: $first-clr;
+          position: relative;
+        }
+
+        &.active::after {
+          content: "";
+          width: 3px;
+          height: 3px;
+          border-radius: 50%;
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: $first-clr-alt;
         }
       }
     }
-    .user-bar {
+
+    &.user-bar {
       li {
         cursor: pointer;
+        @include breakpoint(xs) {
+          display: block;
+        }
+        @include breakpoint(sm) {
+          display: block;
+        }
       }
+    }
+  }
+
+  .aside-pages-bar {
+    @include styleAside;
+    ul {
+      flex-direction: column;
     }
   }
 
   .aside-cart {
     @include styleAside;
-
     .chosen-products {
       // min-height: 20vh;
       max-height: 65vh;
@@ -110,7 +130,7 @@ header {
 
           .controls {
             display: flex;
-            align-items: center;
+            // align-items: center;
             font-size: $h3-font-size;
             color: $text-clr;
 
@@ -119,20 +139,24 @@ header {
               background-color: $section-clr;
               padding: 0 12px;
               border-radius: 5px;
-              cursor: pointer;
             }
 
             .amount {
               padding: 0 0.5em;
             }
 
-            box-icon {
+            .bx-trash {
               margin-left: auto;
+              color: $first-clr;
+
+              &:hover {
+                color: $first-clr-alt;
+              }
             }
 
             .minus,
             .plus,
-            box-icon {
+            .bx-trash {
               cursor: pointer;
             }
           }

@@ -5,7 +5,7 @@ $text-clr: hsl(250, 8%, 35%);
 $body-clr: hsl(250, 60%, 98%);
 $section-clr: #fff;
 $shadow: hsla(0, 0%, 15%, 0.1);
-$hue: 0;
+$hue: 7;
 $first-clr: hsl($hue, 88%, 61%);
 $first-clr-alt: hsl($hue, 88%, 58%);
 
@@ -20,7 +20,7 @@ $small-font-size: 0.875em;
 $smaller-font-size: 0.813em;
 
 // // // Font Weight
-$rg-font: 500;
+$rg-font: 400;
 $md-font: 500;
 $sm-bold-font: 600;
 $bold-font: 700;
@@ -33,6 +33,7 @@ $mg-1-5: 1.5em;
 $mg-2: 2em;
 $mg-2-5: 2.5em;
 $mg-3: 3em;
+$mg-5: 5em;
 
 // // // Transition
 $main-transition: 0.3s;

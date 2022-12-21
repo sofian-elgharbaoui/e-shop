@@ -4,7 +4,309 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- boxicons file -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- css files -->
+    <link rel="stylesheet" href="./css/normilize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/pages/shop.css" />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Shop Page</title>
   </head>
-  <body></body>
+  <body id="home">
+    <!-- =================== GO-UP ICON =================== -->
+    <a href="#home" id="go-up">
+      <i class="bx bx-up-arrow-alt bx-sm"></i>
+    </a>
+    <!-- =================== HEADER =================== -->
+    <header>
+      <div class="container">
+        <h2>
+          <a href="./index.html" id="logo">
+            <i class="bx bxs-shopping-bags bx-sm"></i> e-shop
+          </a>
+        </h2>
+        <nav class="pages-bar">
+          <ul>
+            <li><a href="./index.html">home</a></li>
+            <li><a href="./shop.html" class="active">shop</a></li>
+            <li><a href="./cart.html">cart</a></li>
+            <li><a href="./blog.html">blog</a></li>
+            <li><a href="./faq.html">faq's</a></li>
+            <li><a href="./contact.html">contact</a></li>
+          </ul>
+        </nav>
+        <ul class="user-bar">
+          <li class="user-icon">
+            <i class="bx bx-user bx-sm"></i>
+          </li>
+          <li class="bag-icon">
+            <i class="bx bx-shopping-bag bx-sm"></i>
+          </li>
+          <li class="menu-icon d-nn">
+            <i class="bx bx-grid-alt bx-sm"></i>
+          </li>
+        </ul>
+      </div>
+      <!-- =================== REGISTER =================== -->
+      <div class="aside-register">
+        <div class="close-icon">
+          <i class="bx bx-x bx-md"></i>
+        </div>
+        <h2>Login</h2>
+        <form action="" class="log-in-form">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Your Email"
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Your Password"
+          />
+          <input type="submit" value="Sign in" />
+          <p>You are not a member? <button>Sign up now</button></p>
+        </form>
+        <form action="" class="sign-up-form" hidden>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Your Email"
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Your Password"
+          />
+          <input type="submit" value="Sign in" />
+          <p>You are a member? <button>Sign in now</button></p>
+        </form>
+      </div>
+      <!-- =================== CART =================== -->
+      <div class="aside-cart">
+        <div class="close-icon">
+          <i class="bx bx-x bx-sm"></i>
+        </div>
+        <h2>my cart</h2>
+        <div class="chosen-products">
+          <div class="chosen-product d-fl">
+            <div class="img">
+              <img src="./imgs/cart-1.png" alt="monto" />
+            </div>
+            <div class="details">
+              <h3 class="product-title">windbreaker</h3>
+              <span class="price d-bl">$12.00</span>
+              <div class="controls">
+                <span class="minus">&minus;</span>
+                <span class="amount">1</span>
+                <span class="plus">&plus;</span>
+                <i class="bx bx-trash bx-sm"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="final-details">
+          <p class="chosen-products_number">
+            <span class="number"></span> item
+          </p>
+          <h3 class="final-cost"></h3>
+        </div>
+      </div>
+      <!-- =================== pages-bar =================== -->
+      <nav class="aside-pages-bar">
+        <ul>
+          <li class="close-icon"><i class="bx bx-x bx-md active"></i></li>
+          <li><a href="./index.html">home</a></li>
+          <li><a href="./shop.html" class="active">shop</a></li>
+          <li><a href="./cart.html">cart</a></li>
+          <li><a href="./blog.html">blog</a></li>
+          <li><a href="./faq.html">faq's</a></li>
+          <li><a href="./contact.html">contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- =================== SHOP-CONTAINER =================== -->
+    <div class="shop-container">
+      <div class="container">
+        <h1>shop page</h1>
+        <h2 class="path"></h2>
+        <div class="our-shop d-gr">
+          <div class="select-filters">
+            <h2>select filters</h2>
+            <div class="condition">
+              <h3>condition</h3>
+              <div>
+                <input type="checkbox" name="condition" id="new" />
+                <label for="new">new</label><span></span>
+              </div>
+              <div>
+                <input type="checkbox" name="condition" id="sale" />
+                <label for="sale">sale</label><span></span>
+              </div>
+            </div>
+            <div class="size">
+              <h3>size</h3>
+
+              <div>
+                <input type="checkbox" name="size" id="s" />
+                <label for="s">s</label><span></span>
+              </div>
+
+              <div>
+                <input type="checkbox" name="size" id="m" />
+                <label for="m">m</label><span></span>
+              </div>
+
+              <div>
+                <input type="checkbox" name="size" id="l" />
+                <label for="l">l</label><span></span>
+              </div>
+            </div>
+            <div class="categories">
+              <h3>categories</h3>
+
+              <div>
+                <input type="checkbox" name="category" id="men" />
+                <label for="men">men</label><span></span>
+              </div>
+
+              <div>
+                <input type="checkbox" name="category" id="women" />
+                <label for="women">women</label><span></span>
+              </div>
+
+              <div>
+                <input type="checkbox" name="category" id="kids" />
+                <label for="kids">kids</label><span></span>
+              </div>
+
+              <div>
+                <input type="checkbox" name="category" id="others" />
+                <label for="others">others</label><span></span>
+              </div>
+            </div>
+            <div class="styles">
+              <h3>styles</h3>
+
+              <div>
+                <input type="checkbox" name="style" id="casual" />
+                <label for="casual">casual</label><span></span>
+              </div>
+
+              <div>
+                <input type="checkbox" name="style" id="girly" />
+                <label for="girly">girly</label><span></span>
+              </div>
+
+              <div>
+                <input type="checkbox" name="style" id="dressy" />
+                <label for="dressy">dressy</label><span></span>
+              </div>
+            </div>
+            <div class="sub-categories">
+              <h3>sub-categories</h3>
+
+              <div>
+                <input type="checkbox" name="sub-category" id="jackets" />
+                <label for="jackets">jackets</label><span></span>
+              </div>
+
+              <div>
+                <input type="checkbox" name="sub-category" id="t-shirts" />
+                <label for="t-shirts">t-shirts</label><span></span>
+              </div>
+
+              <div>
+                <input type="checkbox" name="sub-category" id="accessories" />
+                <label for="accessories">accessories</label><span></span>
+              </div>
+
+              <div>
+                <input type="checkbox" name="sub-category" id="shoes" />
+                <label for="shoes">shoes</label><span></span>
+              </div>
+
+              <div>
+                <input type="checkbox" name="sub-category" id="coats" />
+                <label for="coats">coats</label><span></span>
+              </div>
+            </div>
+          </div>
+          <div class="all-products">
+            <div class="all-slides-wrapper"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =================== FOOTER SECTION =================== -->
+    <footer>
+      <div class="container">
+        <div>
+          <h2 class="logo">
+            <a href="./index.html" id="logo">
+              <i class="bx bxs-shopping-bags bx-sm" type="solid"></i> e-shop
+            </a>
+          </h2>
+          <p>
+            Enjoy the biggest sale <br />
+            of your life
+          </p>
+          <div class="social-media">
+            <a href=""><i class="bx bxl-facebook bx-sm"></i></a>
+            <a href=""><i class="bx bxl-twitter bx-sm"></i></a>
+            <a href=""><i class="bx bxl-instagram bx-sm"></i></a>
+          </div>
+        </div>
+        <div class="about">
+          <h2>About</h2>
+          <a href="">about us</a>
+          <a href="">customer support</a>
+          <a href="">support center</a>
+        </div>
+        <div class="our-services">
+          <h2>our Services</h2>
+          <a href="">shop</a>
+          <a href="">discounts</a>
+          <a href="">shipping mode</a>
+        </div>
+        <div class="our-company">
+          <h2>our Company</h2>
+          <a href="">register</a>
+          <a href="">contact us</a>
+          <a href="">about us</a>
+        </div>
+      </div>
+      <p>
+        &copy; coded with <i class="bx bx-heart"></i> by
+        <a href="https://sofian-elgharbaoui.github.io/personal_website/"
+          >SoufianeElghabraoui</a
+        >
+        - All Rights Reserved
+      </p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/shop.js" type="module"></script>
+  </body>
 </html>
