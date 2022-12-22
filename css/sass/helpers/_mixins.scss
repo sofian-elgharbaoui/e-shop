@@ -16,8 +16,8 @@
     }
   } @else if $point == md {
     @media (min-width: 768px) and (max-width: 991px) {
-      @content;
     }
+    @content;
   } @else if $point == (xs, sm, md) {
     @media (max-width: 991px) {
       @content;

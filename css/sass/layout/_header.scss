@@ -8,6 +8,7 @@ header {
   left: 0;
   width: 100%;
   height: 3.5em;
+  width: 100%;
   background-color: $body-clr;
   transition: box-shadow $main-transition;
   z-index: $z-header;
@@ -24,10 +25,7 @@ header {
     }
 
     .pages-bar {
-      @include breakpoint(xs) {
-        display: none;
-      }
-      @include breakpoint(sm) {
+      @include breakpoint((xs, sm)) {
         display: none;
       }
     }
@@ -70,10 +68,10 @@ header {
     &.user-bar {
       li {
         cursor: pointer;
-        @include breakpoint(xs) {
+        @include breakpoint((xs, sm)) {
           display: block;
         }
-        @include breakpoint(sm) {
+        i {
           display: block;
         }
       }
@@ -172,18 +170,28 @@ header {
 
   .close-icon {
     width: fit-content;
-    font-size: xx-small;
     margin: {
       left: auto;
       bottom: $mg-2;
     }
     cursor: pointer;
 
+    // i {
+    //   display: block;
+    // }
+
     + h2 {
       text-transform: uppercase;
       text-align: center;
       margin-bottom: $mg-1-5;
       color: $title-clr;
+    }
+  }
+
+  @include breakpoint((xs, sm)) {
+    .close-icon,
+    .bx {
+      font-size: $h3-font-size !important;
     }
   }
 

@@ -9,7 +9,9 @@
     left: auto;
     right: auto;
   }
-
+  @include breakpoint(xs) {
+    width: 100%;
+  }
   @include breakpoint(sm) {
     width: 550px;
   }

@@ -111,15 +111,16 @@ button {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+  width: 750px;
+}
+@media (max-width: 575px) {
+  .container {
+    width: 100%;
+  }
 }
 @media (min-width: 576px) and (max-width: 767px) {
   .container {
     width: 550px;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .container {
-    width: 750px;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -146,6 +147,7 @@ header {
   left: 0;
   width: 100%;
   height: 3.5em;
+  width: 100%;
   background-color: hsl(250deg, 60%, 98%);
   transition: box-shadow 0.3s;
   z-index: 90;
@@ -160,12 +162,7 @@ header .container #logo {
   display: block;
   font-weight: 700;
 }
-@media (max-width: 575px) {
-  header .container .pages-bar {
-    display: none;
-  }
-}
-@media (min-width: 576px) and (max-width: 767px) {
+@media (max-width: 767px) {
   header .container .pages-bar {
     display: none;
   }
@@ -203,15 +200,13 @@ header ul li a.active::after {
 header ul.user-bar li {
   cursor: pointer;
 }
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   header ul.user-bar li {
     display: block;
   }
 }
-@media (min-width: 576px) and (max-width: 767px) {
-  header ul.user-bar li {
-    display: block;
-  }
+header ul.user-bar li i {
+  display: block;
 }
 header .aside-pages-bar {
   position: fixed;
@@ -306,7 +301,6 @@ header .close-icon {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  font-size: xx-small;
   margin-left: auto;
   margin-bottom: 2em;
   cursor: pointer;
@@ -316,6 +310,12 @@ header .close-icon + h2 {
   text-align: center;
   margin-bottom: 1.5em;
   color: hsl(250deg, 8%, 15%);
+}
+@media (max-width: 767px) {
+  header .close-icon,
+header .bx {
+    font-size: 1.25em !important;
+  }
 }
 header .aside-register {
   position: fixed;
@@ -375,9 +375,10 @@ footer .container {
   gap: 1em;
   padding: 2em 15px 2.5em;
 }
-footer .container div .logo,
-footer .container div .logo a {
+footer .container div #logo {
+  display: block;
   margin-top: 0;
+  font-weight: 700;
 }
 footer .container div .social-media {
   display: flex;
@@ -406,4 +407,8 @@ footer > p {
 footer > p a,
 footer > p .bx {
   color: hsl(7deg, 88%, 61%);
+}
+footer > p .bx {
+  position: relative;
+  top: 2px;
 }/*# sourceMappingURL=style.css.map */

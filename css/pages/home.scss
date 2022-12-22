@@ -305,13 +305,6 @@
 
 // // // responcive
 @include breakpoint((xs, sm)) {
-  .close-icon {
-    font-size: $h3-font-size !important;
-  }
-  .bx {
-    font-size: $h3-font-size !important;
-  }
-
   #interface {
     .slider-container {
       .slide {

@@ -13,6 +13,11 @@
   grid-template-columns: 220px 1fr;
   gap: 30px;
 }
+@media (max-width: 575px) {
+  .shop-container .container > .our-shop {
+    grid-template-columns: initial;
+  }
+}
 .shop-container .container > .our-shop .select-filters {
   background-color: #fff;
   padding: 1em;
@@ -46,6 +51,7 @@
   position: relative;
   height: calc(69em + 60px);
   text-align: center;
+  overflow-y: auto;
 }
 .shop-container .container > .our-shop .all-products .all-slides-wrapper .slide {
   position: absolute;
@@ -54,7 +60,7 @@
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(3, calc(33.3333333333% - 20px));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   align-content: start;
   gap: 30px;
   opacity: 0;
