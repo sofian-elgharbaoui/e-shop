@@ -29,7 +29,7 @@
     "name": "air jorden zipper",
     "price": "$11,99",
     "previousPrice": "21.99",
-    "condition": "new",
+    "condition": "sale",
     "size": "m",
     "category": "men",
     "sub-category": "jackets",
@@ -68,7 +68,7 @@
     "condition": "new",
     "size": "m",
     "category": "women",
-    "sub-category": "accessory",
+    "sub-category": "accessories",
     "style": null
   },
   {
@@ -89,7 +89,7 @@
     "name": "windbeaker jacket",
     "price": "$14,99",
     "previousPrice": "29.99",
-    "condition": "new",
+    "condition": "sale",
     "size": "l",
     "category": "women",
     "sub-category": "coats",
@@ -116,7 +116,7 @@
     "condition": "new",
     "size": "s",
     "category": "women",
-    "sub-category": "accessory",
+    "sub-category": "accessories",
     "style": "girly"
   },
   {
@@ -149,7 +149,7 @@
     "name": "nike hoodie",
     "price": "$7,99",
     "previousPrice": "14.99",
-    "condition": "new",
+    "condition": "sale",
     "size": "m",
     "category": "men",
     "sub-category": "jackets",
@@ -173,7 +173,7 @@
     "name": "windbeaker jacket",
     "price": "$14,99",
     "previousPrice": "29.99",
-    "condition": "new",
+    "condition": "sale",
     "size": "s",
     "category": "men",
     "sub-category": "jackets",
@@ -188,7 +188,7 @@
     "condition": "new",
     "size": "m",
     "category": "women",
-    "sub-category": "accessory",
+    "sub-category": "accessories",
     "style": null
   },
   {
@@ -233,10 +233,10 @@
     "name": "windbeaker jacket",
     "price": "$14,99",
     "previousPrice": "29.99",
-    "condition": "new",
+    "condition": "sale",
     "size": "s",
     "category": "women",
-    "sub-category": "accessory",
+    "sub-category": "accessories",
     "style": "girly"
   },
   {
@@ -269,10 +269,22 @@
     "name": "windbeaker jacket",
     "price": "$14,99",
     "previousPrice": "29.99",
-    "condition": "new",
+    "condition": "sale",
     "size": "s",
-    "category": "women",
-    "sub-category": "accessory",
+    "category": "kids",
+    "sub-category": "accessories",
     "style": "girly"
+  },
+  {
+    "id": 23,
+    "img": "/imgs/product-3.png",
+    "name": "T-shirt",
+    "price": "$1,99",
+    "previousPrice": "2.99",
+    "condition": "sale",
+    "size": "s",
+    "category": "men",
+    "sub-category": "t-shirts",
+    "style": "casual"
   }
 ]

@@ -47,6 +47,11 @@
             gap: $mg-0-5;
             padding: 5px;
 
+            input {
+              outline: none;
+              border: none;
+            }
+
             span {
               margin-left: auto;
             }
@@ -55,8 +60,8 @@
       }
 
       .all-products {
-        padding-bottom: 3em;
         position: relative;
+        overflow: hidden;
 
         .all-slides-wrapper {
           position: relative;
@@ -93,8 +98,7 @@
               flex-direction: column;
               position: relative;
 
-              &::before {
-                content: "new";
+              .before {
                 position: absolute;
                 left: 10px;
                 top: 10px;
@@ -167,15 +171,14 @@
         }
 
         .all-products-pagination {
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          translate: -50% 0;
           height: 3em;
           display: flex;
           justify-content: center;
           align-items: center;
           gap: $mg-0-5;
+          position: relative;
+          // top: 3em;
+          transition: top $main-transition;
 
           span {
             width: 2em;
