@@ -4,17 +4,8 @@
 .shop-container {
   margin: $mg-5 0;
 
-  .container > {
-    h1,
-    h2 {
-      text-align: center;
-    }
-    h2 {
-      margin: {
-        top: $mg-1;
-        bottom: $mg-1;
-      }
-    }
+  .container {
+    @include h1AndPathComp;
 
     .our-shop {
       grid-template-columns: 220px 1fr;
@@ -50,6 +41,7 @@
             input {
               outline: none;
               border: none;
+              cursor: pointer;
             }
 
             span {

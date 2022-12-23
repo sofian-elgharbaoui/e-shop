@@ -159,7 +159,7 @@ for (let i = 0; i < allInputs.length; i++) {
             createProduct(productObj, filtersSlide);
           }
         }
-        sliderControlsUp.css("display", "none");
+        sliderControlsUp.hide();
       }
 
       allSlidesWrapper.append(filtersSlide);
@@ -168,4 +168,22 @@ for (let i = 0; i < allInputs.length; i++) {
       input.setAttribute("checked", "");
     }
   };
+}
+
+// // // ADD HOW MANY PRODUCTS IS IN EACH INPUT
+allInputs;
+allProductsInJSON;
+// console.log(
+//   allProductsInJSON[18][allInputs[4].getAttribute("name")],
+//   allInputs[4].id
+// );
+for (let i = 0; i < allInputs.length; i++) {
+  // console.log(allInputs[i].getAttribute("name"), allInputs[i].id);
+  for (let j = 0; j < allProductsInJSON.length; j++) {
+    if (
+      allProductsInJSON[j][allInputs[i].getAttribute("name")] == allInputs[i].id
+    ) {
+      $(allInputs[i]).siblings()[1].firstElementChild.innerHTML++;
+    }
+  }
 }
