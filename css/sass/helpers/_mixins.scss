@@ -80,3 +80,16 @@
   transition: $main-transition;
   box-shadow: -3px 0 3px $shadow;
 }
+
+@mixin h1AndPathComp {
+  > h1,
+  .path {
+    text-align: center;
+  }
+  .path {
+    margin-bottom: $mg-2;
+    a:nth-of-type(2) {
+      color: $first-clr;
+    }
+  }
+}
