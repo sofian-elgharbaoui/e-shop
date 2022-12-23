@@ -129,7 +129,6 @@ for (let i = 0; i < allInputs.length; i++) {
       }
 
       input.removeAttribute("checked");
-      console.log($(".filters-slide .a-product").length);
     } else {
       // doesn't have the checked attribute
       if ($(".select-filters [checked]").length > 0) {
@@ -159,8 +158,6 @@ for (let i = 0; i < allInputs.length; i++) {
       allSlides.forEach((slide) => removeActiveClass(slide));
       filtersSlide.classList.add("active");
       input.setAttribute("checked", "");
-
-      console.log($(".filters-slide .a-product").length);
     }
   };
 }
