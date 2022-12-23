@@ -1,1 +1,60 @@
-/*# sourceMappingURL=blog.css.map */
+.blog-container {
+  margin: 5em 0;
+}
+.blog-container .container > h1,
+.blog-container .container .path {
+  text-align: center;
+}
+.blog-container .container .path {
+  margin-bottom: 2em;
+}
+.blog-container .container .path a:nth-of-type(2) {
+  color: hsl(7deg, 88%, 61%);
+}
+.blog-container .container .our-blog .topic {
+  background-color: #fff;
+  padding: 1em;
+  margin-top: 2em;
+  border-radius: 1em;
+  display: flex;
+  gap: 1em;
+}
+.blog-container .container .our-blog .topic img {
+  width: 40%;
+  border-radius: 1em;
+  width: 50%;
+}
+.blog-container .container .our-blog .topic .info {
+  min-height: 230px;
+  position: relative;
+}
+.blog-container .container .our-blog .topic .info p,
+.blog-container .container .our-blog .topic .info a {
+  color: hsl(250deg, 8%, 35%);
+  text-transform: capitalize;
+}
+.blog-container .container .our-blog .topic .info h2 {
+  margin: 1em 0;
+}
+.blog-container .container .our-blog .topic .info a {
+  display: block;
+  padding: 0.5em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+.blog-container .container .our-blog .topic .info a:hover {
+  color: hsl(250deg, 8%, 15%);
+}
+@media (max-width: 767px) {
+  .blog-container .container .our-blog .topic {
+    flex-direction: column;
+    gap: 2em;
+  }
+  .blog-container .container .our-blog .topic img {
+    width: 100%;
+  }
+}/*# sourceMappingURL=blog.css.map */

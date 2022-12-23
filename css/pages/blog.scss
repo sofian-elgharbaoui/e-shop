@@ -1,2 +1,61 @@
+@use "../sass/helpers/variables" as *;
+@use "../sass/helpers/mixins" as *;
+.blog-container {
+  margin: $mg-5 0;
+  .container {
+    @include h1AndPathComp;
+    .our-blog {
+      .topic {
+        background-color: $section-clr;
+        padding: $mg-1;
+        margin-top: $mg-2;
+        border-radius: $mg-1;
+        display: flex;
+        gap: $mg-1;
 
+        img {
+          width: 40%;
+          border-radius: 1em;
 
+          @include breakpoint(md) {
+            width: 50%;
+          }
+        }
+        .info {
+          min-height: 230px;
+          position: relative;
+          p,
+          a {
+            color: $text-clr;
+            text-transform: capitalize;
+          }
+          h2 {
+            margin: $mg-1 0;
+          }
+          a {
+            display: block;
+            padding: 0.5em;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            font-weight: $md-font;
+
+            &:hover {
+              color: $title-clr;
+            }
+          }
+        }
+
+        @include breakpoint((xs, sm)) {
+          flex-direction: column;
+          gap: 2em;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
