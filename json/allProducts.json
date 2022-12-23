@@ -286,5 +286,101 @@
     "category": "men",
     "sub-category": "t-shirts",
     "style": "casual"
+  },
+  {
+    "id": 24,
+    "img": "/imgs/new-6.png",
+    "name": "nike hoodie",
+    "price": "$7,99",
+    "previousPrice": "14.99",
+    "condition": "new",
+    "size": "s",
+    "category": "men",
+    "sub-category": "jackets",
+    "style": "casual"
+  },
+  {
+    "id": 25,
+    "img": "/imgs/product-1.png",
+    "name": "windbeaker jacket",
+    "price": "$14,99",
+    "previousPrice": "29.99",
+    "condition": "new",
+    "size": "l",
+    "category": "women",
+    "sub-category": "coats",
+    "style": "girly"
+  },
+  {
+    "id": 26,
+    "img": "/imgs/product-2.png",
+    "name": "air jorden zipper",
+    "price": "$11,99",
+    "previousPrice": "21.99",
+    "condition": "new",
+    "size": "s",
+    "category": "men",
+    "sub-category": "coats",
+    "style": null
+  },
+  {
+    "id": 27,
+    "img": "/imgs/product-3.png",
+    "name": "windbeaker jacket",
+    "price": "$14,99",
+    "previousPrice": "29.99",
+    "condition": "sale",
+    "size": "s",
+    "category": "women",
+    "sub-category": "accessories",
+    "style": "girly"
+  },
+  {
+    "id": 28,
+    "img": "/imgs/product-1.png",
+    "name": "windbeaker jacket",
+    "price": "$14,99",
+    "previousPrice": "29.99",
+    "condition": "new",
+    "size": "l",
+    "category": "women",
+    "sub-category": "coats",
+    "style": "girly"
+  },
+  {
+    "id": 29,
+    "img": "/imgs/product-2.png",
+    "name": "air jorden zipper",
+    "price": "$11,99",
+    "previousPrice": "21.99",
+    "condition": "new",
+    "size": "s",
+    "category": "men",
+    "sub-category": "coats",
+    "style": null
+  },
+  {
+    "id": 30,
+    "img": "/imgs/product-3.png",
+    "name": "windbeaker jacket",
+    "price": "$14,99",
+    "previousPrice": "29.99",
+    "condition": "sale",
+    "size": "s",
+    "category": "kids",
+    "sub-category": "accessories",
+    "style": "girly"
+  },
+  {
+    "id": 31,
+    "img": "/imgs/product-3.png",
+    "name": "T-shirt",
+    "price": "$1,99",
+    "previousPrice": "2.99",
+    "condition": "sale",
+    "size": "s",
+    "category": "men",
+    "sub-category": "t-shirts",
+    "style": "casual"
   }
 ]

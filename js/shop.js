@@ -105,11 +105,8 @@ for (let i = 0; i < sliderControls.length; i++) {
 // // // FILTERS
 
 let allInputs = document.querySelectorAll("[type='checkbox']");
-
 let filtersSlide = document.createElement("div");
 filtersSlide.className = "slide filters-slide";
-
-let checkedItems = filtersSlide.children.length;
 
 for (let i = 0; i < allInputs.length; i++) {
   const input = allInputs[i];
@@ -129,6 +126,16 @@ for (let i = 0; i < allInputs.length; i++) {
       }
 
       input.removeAttribute("checked");
+
+      if ($(".select-filters [checked]").length == 0) {
+        document.querySelector(".filters-slide").classList.remove("active");
+        allSlides[
+          [...sliderControls].find((el) => el.hasAttribute("class")).dataset
+            .index
+        ].classList.add("active");
+
+        sliderControlsUp.css("display", "flex");
+      }
     } else {
       // doesn't have the checked attribute
       if ($(".select-filters [checked]").length > 0) {
@@ -152,6 +159,7 @@ for (let i = 0; i < allInputs.length; i++) {
             createProduct(productObj, filtersSlide);
           }
         }
+        sliderControlsUp.css("display", "none");
       }
 
       allSlidesWrapper.append(filtersSlide);
