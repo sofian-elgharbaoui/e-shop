@@ -1,19 +1,19 @@
 [
   {
-    "id": 0,
-    "img": "/imgs/new-1.png",
-    "name": "windbeaker jacket",
-    "type": "accessory",
-    "price": "$14,99",
-    "previousPrice": "29.99"
-  },
-  {
     "id": 1,
     "img": "/imgs/new-2.png",
     "name": "air jorden zipper",
     "type": "accessory",
     "price": "$11,99",
     "previousPrice": "21.99"
+  },
+  {
+    "id": 2,
+    "img": "/imgs/new-1.png",
+    "name": "windbeaker jacket",
+    "type": "accessory",
+    "price": "$14,99",
+    "previousPrice": "29.99"
   },
   {
     "id": 3,
