@@ -88,12 +88,12 @@ header {
   .aside-cart {
     @include styleAside;
     .chosen-products {
-      // min-height: 20vh;
       max-height: 65vh;
       margin-bottom: $mg-2;
       overflow: auto;
 
       .chosen-product {
+        display: flex;
         height: 7em;
         gap: 1em;
         &:not(:last-of-type) {
@@ -156,6 +156,10 @@ header {
             .plus,
             .bx-trash {
               cursor: pointer;
+
+              &::selection {
+                user-select: none;
+              }
             }
           }
         }
@@ -165,6 +169,10 @@ header {
     .final-details {
       display: flex;
       justify-content: space-between;
+
+      .number {
+        margin-right: 5px;
+      }
     }
   }
 

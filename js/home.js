@@ -58,29 +58,32 @@ for (let i = 0; i < sliderControls.length; i++) {
   }
 })();
 
-// // // put the arrival products in there place
-let newArrivals = document.querySelector("#new-arrivals .swiper-wrapper");
-
-for (let i = 0; i < arrivalProductsInJSON.length; i++) {
-  const arrivalProduct = arrivalProductsInJSON[i];
-
+function createProduct(prodObj, container) {
   let newProduct = document.createElement("div");
-  newProduct.id = arrivalProduct.id;
+  newProduct.id = prodObj.id;
   newProduct.className = "new-product swiper-slide";
   newProduct.innerHTML = `
     <div class="img">
-      <img src="${arrivalProduct.img}"/>
+      <img src="${prodObj.img}"/>
     </div>
-    <h2 class="name">${arrivalProduct.name}</h2>
-    <span class="type d-bl">${arrivalProduct.type}</span>
-    <div class="b-a-price d-fl">
-      <span class="price">${arrivalProduct.price}</span>
-      <del class="prev-price">${arrivalProduct.previousPrice}</del>
+    <div class="info">
+      <h2 class="name">${prodObj.name}</h2>
+      <span class="type d-bl">${prodObj.type}</span>
+      <div class="b-a-price d-fl">
+        <span>$<span class="price">${prodObj.price}</span></span>
+        <del class="prev-price">${prodObj.previousPrice}</del>
+      </div>
+      <a class="cart"><i class="bx bx-cart-alt"></i></a>
     </div>
-    <a href="http://e-shop/shop.index/${arrivalProduct.name}"><i class="bx bx-cart-alt"></i></a>
-  `;
-  newArrivals.appendChild(newProduct);
+    `;
+  container.appendChild(newProduct);
 }
+// // // put the arrival products in there place
+let newArrivals = document.querySelector("#new-arrivals .swiper-wrapper");
+for (let i = 0; i < arrivalProductsInJSON.length; i++) {
+  createProduct(arrivalProductsInJSON[i], newArrivals);
+}
+
 let swiperPagination = document.createElement("div");
 swiperPagination.className = "slider-controls";
 newArrivals.after(swiperPagination);
@@ -124,3 +127,181 @@ function bulletEffect(controls) {
     };
   }
 }
+
+// // // ADD THE CHOOSEN PRODUCT from LocalStorage & Products TO THE CART
+function addToCart(productObj, quantity) {
+  let chosenProd = $("<div/>", {
+    id: productObj.id,
+    class: "chosen-product",
+  });
+
+  chosenProd.html(`
+  <div class="img">
+     <img src="${productObj.img}" alt="monto" />
+  </div>
+  <div class="details">
+    <h3 class="product-title">${productObj.name}</h3>
+    <span class="price d-bl">${productObj.price}</span>
+    <div class="controls">
+      <span class="minus">&minus;</span>
+      <span class="amount">${quantity}</span>
+      <span class="plus">&plus;</span>
+      <i class="bx bx-trash bx-sm trash"></i>
+    </div>
+  </div>`);
+
+  chosenProductsUp.prepend(chosenProd);
+}
+
+let chosenProductsUp = $("header .chosen-products");
+let chosenProductsNum = $("header .final-details .chosen-products_number");
+let allCarts = $(".info .cart");
+
+let chosenProductsfromLS =
+  JSON.parse(localStorage.getItem("chosen Products")) ?? [];
+chosenProductsfromLS.forEach((arr) => {
+  addToCart(
+    arrivalProductsInJSON.find((obj) => obj.id == arr[0]),
+    arr[1]
+  );
+});
+
+let itemsNumfromLS = +localStorage.getItem("item(s) Number");
+chosenProductsNum.children()[0].innerHTML = itemsNumfromLS; // quantity of products
+
+let theCost = JSON.parse(localStorage.getItem("the Cost"));
+chosenProductsUp.next().find("#cost").html(theCost.toFixed(2));
+
+for (let i = 0; i < allCarts.length; i++) {
+  allCarts[i].onclick = () => {
+    // I want to add the product ID & its QUANTITY to an arr
+    // it was necessary to write RETURN because there was brackets
+    // the console inside the condition is bad, because it doesn't return what is inside it
+    let ourProduct = allCarts[i].closest(".new-product");
+
+    if (chosenProductsfromLS.length > 0) {
+      if (chosenProductsfromLS.every((arr) => arr[0] != +ourProduct.id)) {
+        chosenProductsfromLS.push([+ourProduct.id, 1]);
+      } else {
+        chosenProductsfromLS.find((arr) => arr[0] == +ourProduct.id)[1]++;
+      }
+    } else {
+      chosenProductsfromLS.push([+ourProduct.id, 1]);
+    }
+
+    chosenProductsUp.get()[0].innerHTML = "";
+    chosenProductsfromLS.forEach((arr) => {
+      addToCart(
+        arrivalProductsInJSON.find((obj) => obj.id == arr[0]),
+        arr[1]
+      );
+    });
+    localStorage.setItem(
+      "chosen Products",
+      JSON.stringify(chosenProductsfromLS)
+    );
+
+    chosenProductsNum.children()[0].innerHTML = ++itemsNumfromLS;
+    localStorage.setItem("item(s) Number", itemsNumfromLS);
+
+    theCost = (
+      +chosenProductsUp.next().find("#cost").get()[0].innerHTML +
+      +$(ourProduct).find(".price").html()
+    ).toFixed(2);
+    chosenProductsUp.next().find("#cost").get()[0].innerHTML = theCost;
+    localStorage.setItem("the Cost", JSON.stringify(theCost));
+
+    allPlusSigns = chosenProductsUp.find(".plus");
+    allMinusSigns = chosenProductsUp.find(".minus");
+    allTrashIcons = chosenProductsUp.find(".trash");
+    reduceIncreaseRemoveCost();
+  };
+}
+
+// // increase/decrease the number of items.
+let allPlusSigns = chosenProductsUp.find(".plus");
+let allMinusSigns = chosenProductsUp.find(".minus");
+let allTrashIcons = chosenProductsUp.find(".trash");
+let reduceIncreaseRemoveCost;
+
+(reduceIncreaseRemoveCost = function () {
+  for (let p = 0; p < allPlusSigns.length; p++) {
+    allPlusSigns[p].onclick = () => {
+      allPlusSigns[p].previousElementSibling.innerHTML++;
+      chosenProductsfromLS.find(
+        (arr) => arr[0] == allPlusSigns[p].closest(".chosen-product").id
+      )[1]++;
+      localStorage.setItem(
+        "chosen Products",
+        JSON.stringify(chosenProductsfromLS)
+      );
+
+      chosenProductsNum.children()[0].innerHTML = ++itemsNumfromLS;
+      localStorage.setItem("item(s) Number", itemsNumfromLS);
+
+      theCost = (
+        +chosenProductsUp.next().find("#cost").get()[0].innerHTML +
+        +$(allPlusSigns[p]).parent().prev().html()
+      ).toFixed(2);
+      chosenProductsUp.next().find("#cost").html(theCost);
+      localStorage.setItem("the Cost", JSON.stringify(theCost));
+    };
+  }
+
+  for (let m = 0; m < allMinusSigns.length; m++) {
+    allMinusSigns[m].onclick = () => {
+      if (allMinusSigns[m].nextElementSibling.innerHTML == 1) return;
+      allMinusSigns[m].nextElementSibling.innerHTML--;
+      chosenProductsfromLS.find(
+        (arr) => arr[0] == allMinusSigns[m].closest(".chosen-product").id
+      )[1]--;
+      localStorage.setItem(
+        "chosen Products",
+        JSON.stringify(chosenProductsfromLS)
+      );
+
+      chosenProductsNum.children()[0].innerHTML = --itemsNumfromLS;
+      localStorage.setItem("item(s) Number", itemsNumfromLS);
+
+      theCost = (
+        +chosenProductsUp.next().find("#cost").get()[0].innerHTML -
+        +$(allMinusSigns[m]).parent().prev().html()
+      ).toFixed(2);
+      chosenProductsUp.next().find("#cost").html(theCost);
+      localStorage.setItem("the Cost", JSON.stringify(theCost));
+    };
+  }
+
+  for (let t = 0; t < allTrashIcons.length; t++) {
+    allTrashIcons[t].onclick = () => {
+      let relatedProd = allTrashIcons[t].closest(".chosen-product");
+
+      itemsNumfromLS =
+        itemsNumfromLS -
+        chosenProductsfromLS.find((arr) => arr[0] == relatedProd.id)[1];
+      chosenProductsNum.children()[0].innerHTML = itemsNumfromLS;
+      localStorage.setItem("item(s) Number", itemsNumfromLS);
+
+      theCost = (
+        +chosenProductsUp.next().find("#cost").get()[0].innerHTML -
+        +$(allTrashIcons[t]).parent().prev().html() *
+          chosenProductsfromLS.find((arr) => arr[0] == relatedProd.id)[1]
+      ).toFixed(2);
+      chosenProductsUp.next().find("#cost").html(theCost);
+      localStorage.setItem("the Cost", JSON.stringify(theCost));
+
+      chosenProductsfromLS.splice(
+        chosenProductsfromLS.indexOf(
+          chosenProductsfromLS.find((arr) => arr[0] == relatedProd.id)
+        ),
+        1
+      );
+      localStorage.setItem(
+        "chosen Products",
+        JSON.stringify(chosenProductsfromLS)
+      );
+
+      relatedProd.remove();
+    };
+  }
+})();

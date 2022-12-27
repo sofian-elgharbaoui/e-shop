@@ -39,9 +39,8 @@ $mg-5: 5em;
 $main-transition: 0.3s;
 
 // // // Z-index
-$z-header: 90;
-$z-tooltip: 100;
-$z-fixed: 99;
+$z-header: 99;
+$z-tooltip: 98;
 
 // // // Responsive Typography
 @media screen and (max-width: 991px) {
