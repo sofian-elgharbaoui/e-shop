@@ -1,1 +1,93 @@
-/*# sourceMappingURL=contact.css.map */
+.contact-container {
+  padding: 5em 0;
+}
+.contact-container .container > h1,
+.contact-container .container .path {
+  text-align: center;
+}
+.contact-container .container .path {
+  margin-bottom: 2em;
+}
+.contact-container .container .path a:nth-of-type(2) {
+  color: hsl(7deg, 88%, 61%);
+}
+
+.our-contact {
+  display: flex;
+  gap: 1em;
+}
+.our-contact .text {
+  flex-basis: 40%;
+}
+.our-contact .text > p {
+  margin: 1rem 0 2rem;
+}
+.our-contact .text > div {
+  display: flex;
+  gap: 10px;
+  margin: 1rem 0;
+}
+.our-contact .text > div i {
+  color: hsl(7deg, 88%, 61%);
+  width: 2.2rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.our-contact .text > div h4 {
+  font-weight: 500;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+.our-contact .text > div p {
+  text-transform: capitalize;
+}
+.our-contact .contact-form {
+  flex-basis: calc(60% - 1em);
+}
+.our-contact .contact-form form > div {
+  display: flex;
+  gap: 1em;
+  margin: 1em 0;
+}
+@media (max-width: 767px) {
+  .our-contact .contact-form form > div {
+    flex-direction: column;
+  }
+}
+.our-contact .contact-form input,
+.our-contact .contact-form textarea {
+  border-radius: 2rem;
+  border: none;
+  padding: 1rem;
+  padding-left: 1.5rem;
+  min-height: 3.15rem;
+  display: block;
+  width: 100%;
+  outline: none;
+}
+.our-contact .contact-form input:focus,
+.our-contact .contact-form textarea:focus {
+  outline: 2px solid hsl(7deg, 88%, 61%);
+}
+.our-contact .contact-form textarea {
+  margin: 1rem 0;
+  resize: vertical;
+  min-width: 100%;
+}
+.our-contact .contact-form [type=submit] {
+  background-color: hsl(7deg, 88%, 61%);
+  border: none;
+  padding: 1em 1.5em;
+  border-radius: 2em;
+  color: #eee;
+}
+@media (max-width: 991px) {
+  .our-contact {
+    flex-wrap: wrap;
+  }
+  .our-contact .text,
+.our-contact .contact-form {
+    flex-basis: 100%;
+  }
+}/*# sourceMappingURL=contact.css.map */

@@ -1,0 +1,102 @@
+@use "../sass/helpers/variables" as *;
+@use "../sass/helpers/mixins" as *;
+
+.contact-container {
+  padding: 5em 0;
+
+  .container {
+    @include h1AndPathComp;
+  }
+}
+
+.our-contact {
+  display: flex;
+  gap: 1em;
+
+  .text {
+    flex-basis: 40%;
+
+    > {
+      p {
+        margin: 1rem 0 2rem;
+      }
+
+      div {
+        display: flex;
+        gap: 10px;
+        margin: 1rem 0;
+
+        i {
+          color: $first-clr;
+          width: 2.2rem;
+          font-size: 2rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        h4 {
+          font-weight: 500;
+          color: #aaa;
+          margin-bottom: 5px;
+        }
+
+        p {
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+
+  .contact-form {
+    flex-basis: calc(60% - 1em);
+
+    form > div {
+      display: flex;
+      gap: 1em;
+      margin: 1em 0;
+
+      @include breakpoint((xs, sm)) {
+        flex-direction: column;
+      }
+    }
+
+    input,
+    textarea {
+      border-radius: 2rem;
+      border: none;
+      padding: 1rem;
+      padding-left: 1.5rem;
+      min-height: 3.15rem;
+      display: block;
+      width: 100%;
+      outline: none;
+
+      &:focus {
+        outline: 2px solid $first-clr;
+      }
+    }
+
+    textarea {
+      margin: 1rem 0;
+      resize: vertical;
+      min-width: 100%;
+    }
+
+    [type="submit"] {
+      background-color: $first-clr;
+      border: none;
+      padding: 1em 1.5em;
+      border-radius: 2em;
+      color: $clr;
+    }
+  }
+
+  @include breakpoint((xs, sm, md)) {
+    flex-wrap: wrap;
+
+    .text,
+    .contact-form {
+      flex-basis: 100%;
+    }
+  }
+}
