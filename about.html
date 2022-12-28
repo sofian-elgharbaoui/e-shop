@@ -14,7 +14,7 @@
     <!-- css files -->
     <link rel="stylesheet" href="./css/normilize.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/pages/home.css" />
+    <link rel="stylesheet" href="./css/pages/about.css" />
 
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,7 +45,6 @@
             <li><a href="./shop.html">shop</a></li>
             <li><a href="./cart.html">cart</a></li>
             <li><a href="./blog.html">blog</a></li>
-            <li><a href="./about.html" class="active">about</a></li>
             <li><a href="./faq.html">faq's</a></li>
             <li><a href="./contact.html">contact</a></li>
           </ul>
@@ -107,28 +106,16 @@
           <i class="bx bx-x bx-md"></i>
         </div>
         <h2>my cart</h2>
-        <div class="chosen-products">
-          <div class="chosen-product d-fl">
-            <div class="img">
-              <img src="./imgs/cart-1.png" alt="monto" />
-            </div>
-            <div class="details">
-              <h3 class="product-title">windbreaker</h3>
-              <span class="price d-bl">$12.00</span>
-              <div class="controls">
-                <span class="minus">&minus;</span>
-                <span class="amount">1</span>
-                <span class="plus">&plus;</span>
-                <i class="bx bx-trash bx-sm"></i>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="chosen-products"></div>
         <div class="final-details">
           <p class="chosen-products_number">
-            <span class="number"></span> item
+            <span class="number">0</span>
+            <span class="item">item</span>
           </p>
-          <h3 class="final-cost"></h3>
+          <h3 class="final-cost">
+            <span>$</span>
+            <span id="cost"></span>
+          </h3>
         </div>
       </div>
       <!-- =================== pages-bar =================== -->
@@ -153,6 +140,27 @@
         <h2 class="path">
           <a href="./index.html">home</a> > <a href="./about.html">about</a>
         </h2>
+        <div class="our-about">
+          <div class="img">
+            <img src="./imgs/about-img.jpg" alt="about us page" />
+          </div>
+          <div class="discr">
+            <h1>
+              Who we really are & <br />
+              why choose us
+            </h1>
+            <p>
+              We have over 4000+ unbiased reviews and our customers trust our
+              products and delivery service every time.
+            </p>
+
+            <ul>
+              <li>We always deliver on time</li>
+              <li>We give you guides to protect and care for your products</li>
+              <li>100% money back guaranted</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -177,7 +185,7 @@
         </div>
         <div class="about">
           <h2>About</h2>
-          <a href="">about us</a>
+          <a href="./about.html">about us</a>
           <a href="">customer support</a>
           <a href="">support center</a>
         </div>
@@ -191,7 +199,7 @@
           <h2>our Company</h2>
           <a href="">register</a>
           <a href="">contact us</a>
-          <a href="">about us</a>
+          <a href="./about.html">about us</a>
         </div>
       </div>
       <p>
@@ -204,6 +212,6 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/main.js" type="module"></script>
   </body>
 </html>

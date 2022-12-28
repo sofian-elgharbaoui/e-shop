@@ -1,1 +1,67 @@
-/*# sourceMappingURL=about.css.map */
+/* start styling the about page */
+.about-container {
+  padding: 5em 0;
+}
+.about-container .container > h1,
+.about-container .container .path {
+  text-align: center;
+}
+.about-container .container .path {
+  margin-bottom: 2em;
+}
+.about-container .container .path a:nth-of-type(2) {
+  color: hsl(7deg, 88%, 61%);
+}
+
+.our-about {
+  display: flex;
+  gap: 10%;
+}
+.our-about > * {
+  flex-basis: 45%;
+}
+.our-about .img img {
+  width: 100%;
+  display: block;
+}
+.our-about .discr h1 {
+  margin-top: 0;
+}
+.our-about .discr p {
+  margin: 2em 0;
+}
+.our-about .discr li {
+  padding-left: 2em;
+  position: relative;
+  margin: 5px 0;
+}
+.our-about .discr li::before, .our-about .discr li::after {
+  content: "";
+  position: absolute;
+  translate: 0 -50%;
+}
+.our-about .discr li::before {
+  width: 1em;
+  height: 1em;
+  background-color: hsl(7deg, 88%, 61%);
+  top: 50%;
+  left: 0.5em;
+}
+.our-about .discr li::after {
+  width: 0.4em;
+  height: 0.6em;
+  border: 2px solid;
+  border-color: transparent #fff #fff transparent;
+  left: 0.75em;
+  top: 40%;
+  rotate: 35deg;
+}
+@media (max-width: 767px) {
+  .our-about {
+    flex-wrap: wrap;
+    gap: 2em;
+  }
+  .our-about > * {
+    flex-basis: 100%;
+  }
+}/*# sourceMappingURL=about.css.map */

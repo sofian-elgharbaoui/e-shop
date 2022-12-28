@@ -63,7 +63,7 @@ button {
   right: 2em;
   bottom: -3em;
   opacity: 0;
-  z-index: 100;
+  z-index: 98;
   transition: 0.3s;
 }
 #go-up.visible {
@@ -150,7 +150,7 @@ header {
   width: 100%;
   background-color: hsl(250deg, 60%, 98%);
   transition: box-shadow 0.3s;
-  z-index: 90;
+  z-index: 99;
 }
 header .container {
   display: flex;
@@ -239,6 +239,7 @@ header .aside-cart .chosen-products {
   overflow: auto;
 }
 header .aside-cart .chosen-products .chosen-product {
+  display: flex;
   height: 7em;
   gap: 1em;
 }
@@ -293,9 +294,24 @@ header .aside-cart .chosen-products .chosen-product .details .controls .plus,
 header .aside-cart .chosen-products .chosen-product .details .controls .bx-trash {
   cursor: pointer;
 }
+header .aside-cart .chosen-products .chosen-product .details .controls .minus::-moz-selection, header .aside-cart .chosen-products .chosen-product .details .controls .plus::-moz-selection, header .aside-cart .chosen-products .chosen-product .details .controls .bx-trash::-moz-selection {
+  -moz-user-select: none;
+       user-select: none;
+}
+header .aside-cart .chosen-products .chosen-product .details .controls .minus::selection,
+header .aside-cart .chosen-products .chosen-product .details .controls .plus::selection,
+header .aside-cart .chosen-products .chosen-product .details .controls .bx-trash::selection {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
 header .aside-cart .final-details {
   display: flex;
   justify-content: space-between;
+}
+header .aside-cart .final-details .number {
+  margin-right: 5px;
 }
 header .close-icon {
   width: -webkit-fit-content;

@@ -1,2 +1,76 @@
+@use "../sass/helpers/mixins" as *;
+@use "../sass/helpers/variables" as *;
+/* start styling the about page */
+.about-container {
+  padding: $mg-5 0;
 
+  .container {
+    @include h1AndPathComp;
+  }
+}
 
+.our-about {
+  display: flex;
+  gap: 10%;
+
+  > * {
+    flex-basis: 45%;
+  }
+
+  .img {
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .discr {
+    h1 {
+      margin-top: 0;
+    }
+
+    p {
+      margin: $mg-2 0;
+    }
+
+    li {
+      padding-left: 2em;
+      position: relative;
+      margin: 5px 0;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        translate: 0 -50%;
+      }
+
+      &::before {
+        width: 1em;
+        height: 1em;
+        background-color: $first-clr;
+        top: 50%;
+        left: 0.5em;
+      }
+
+      &::after {
+        width: 0.4em;
+        height: 0.6em;
+        border: 2px solid;
+        border-color: transparent #fff #fff transparent;
+        left: 0.75em;
+        top: 40%;
+        rotate: 35deg;
+      }
+    }
+  }
+
+  @include breakpoint((xs, sm)) {
+    flex-wrap: wrap;
+    gap: 2em;
+
+    > * {
+      flex-basis: 100%;
+    }
+  }
+}
