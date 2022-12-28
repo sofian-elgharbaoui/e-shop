@@ -14,7 +14,7 @@
     <!-- css files -->
     <link rel="stylesheet" href="./css/normilize.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/pages/home.css" />
+    <link rel="stylesheet" href="./css/pages/contact.css" />
 
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,8 +45,7 @@
             <li><a href="./shop.html">shop</a></li>
             <li><a href="./cart.html">cart</a></li>
             <li><a href="./blog.html">blog</a></li>
-            <li><a href="./about.html">about</a></li>
-            <li><a href="./faq.html">faq's</a></li>
+            <li><a href="./faqs.html">faq's</a></li>
             <li><a href="./contact.html" class="active">contact</a></li>
           </ul>
         </nav>
@@ -107,28 +106,16 @@
           <i class="bx bx-x bx-md"></i>
         </div>
         <h2>my cart</h2>
-        <div class="chosen-products">
-          <div class="chosen-product d-fl">
-            <div class="img">
-              <img src="./imgs/cart-1.png" alt="monto" />
-            </div>
-            <div class="details">
-              <h3 class="product-title">windbreaker</h3>
-              <span class="price d-bl">$12.00</span>
-              <div class="controls">
-                <span class="minus">&minus;</span>
-                <span class="amount">1</span>
-                <span class="plus">&plus;</span>
-                <i class="bx bx-trash bx-sm"></i>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="chosen-products"></div>
         <div class="final-details">
           <p class="chosen-products_number">
-            <span class="number"></span> item
+            <span class="number">0</span>
+            <span class="item">item</span>
           </p>
-          <h3 class="final-cost"></h3>
+          <h3 class="final-cost">
+            <span>$</span>
+            <span id="cost"></span>
+          </h3>
         </div>
       </div>
       <!-- =================== pages-bar =================== -->
@@ -139,8 +126,7 @@
           <li><a href="./shop.html">shop</a></li>
           <li><a href="./cart.html">cart</a></li>
           <li><a href="./blog.html">blog</a></li>
-          <li><a href="./about.html">about</a></li>
-          <li><a href="./faq.html">faq's</a></li>
+          <li><a href="./faqs.html">faq's</a></li>
           <li><a href="./contact.html" class="active">contact</a></li>
         </ul>
       </nav>
@@ -153,6 +139,55 @@
         <h2 class="path">
           <a href="./index.html">home</a> > <a href="./contact.html">contact</a>
         </h2>
+
+        <div class="our-contact">
+          <div class="text">
+            <h2>DON'T BE SHY !</h2>
+            <p>
+              Feel free to get in touch with us. We are always open to
+              discussing new projects, creative ideas or opportunities to be
+              part of your visions.
+            </p>
+            <div>
+              <i class="bx bx-map bx-md"></i>
+              <div>
+                <h4>ADDRESS POINT</h4>
+                <p>lot al inbiaat 2, ras el mae, fes city, morocco.</p>
+              </div>
+            </div>
+            <div>
+              <i class="bx bx-envelope-open bx-md"></i>
+              <div>
+                <h4>MAIL ME</h4>
+                <a href="mailto:elgharbaoui.soufiane@outlook.com">
+                  elgharbaoui.soufiane@outlook.com
+                </a>
+              </div>
+            </div>
+            <div>
+              <i class="bx bx-phone bx-md"></i>
+              <div>
+                <h4>CALL ME</h4>
+                <a href="tel:+212707459677">+212 707-459677</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form method="post" action="contact.php">
+              <div>
+                <input type="text" name="name" placeholder="YOUR FULL NAME" />
+                <input type="email" name="email" placeholder="YOUR EMAIL" />
+              </div>
+              <input type="text" name="subject" placeholder="YOUR SUBJECT" />
+              <textarea
+                name="message"
+                rows="6"
+                placeholder="YOUR MESSAGE"
+              ></textarea>
+              <button type="submit">SEND MESSAGE</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -177,7 +212,7 @@
         </div>
         <div class="about">
           <h2>About</h2>
-          <a href="">about us</a>
+          <a href="./about.html">about us</a>
           <a href="">customer support</a>
           <a href="">support center</a>
         </div>
@@ -191,12 +226,14 @@
           <h2>our Company</h2>
           <a href="">register</a>
           <a href="">contact us</a>
-          <a href="">about us</a>
+          <a href="./about.html">about us</a>
         </div>
       </div>
       <p>
         &copy; coded with <i class="bx bx-heart"></i> by
-        <a href="https://sofian-elgharbaoui.github.io/personal_website/"
+        <a
+          href="https://sofian-elgharbaoui.github.io/personal_website/"
+          target="_blank"
           >SoufianeElghabraoui</a
         >
         - All Rights Reserved
@@ -204,6 +241,6 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/main.js" type="module"></script>
   </body>
 </html>
