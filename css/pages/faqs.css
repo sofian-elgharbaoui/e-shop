@@ -1,0 +1,63 @@
+.faqs-container {
+  margin: 5em 0;
+}
+.faqs-container .container > h1,
+.faqs-container .container .path {
+  text-align: center;
+}
+.faqs-container .container .path {
+  margin-bottom: 2em;
+}
+.faqs-container .container .path a:nth-of-type(2) {
+  color: hsl(7deg, 88%, 61%);
+}
+
+.our-faqs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+}
+.our-faqs .q-group details {
+  width: 100%;
+  background-color: #fff;
+  padding: 1.5em 2em;
+  transition: 0.3s;
+}
+.our-faqs .q-group details,
+.our-faqs .q-group details * {
+  outline: none;
+}
+.our-faqs .q-group details:not(:last-child) {
+  margin-bottom: 1em;
+}
+.our-faqs .q-group details summary {
+  color: hsl(250deg, 8%, 15%);
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  font-weight: 500;
+}
+.our-faqs .q-group details summary .before,
+.our-faqs .q-group details summary .after {
+  position: absolute;
+  left: -1.5em;
+  top: 50%;
+  translate: 0 -50%;
+  width: 1em;
+  height: 2.5px;
+  background-color: hsl(250deg, 8%, 15%);
+  transition: 0.3s;
+  rotate: 0;
+}
+.our-faqs .q-group details p {
+  padding-top: 0.5em;
+  color: #eee;
+}
+.our-faqs .q-group details[open] {
+  background-color: hsl(7deg, 88%, 61%);
+}
+@media (max-width: 767px) {
+  .our-faqs {
+    grid-template-columns: initial;
+  }
+}/*# sourceMappingURL=faqs.css.map */

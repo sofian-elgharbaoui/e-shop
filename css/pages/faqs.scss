@@ -1,0 +1,68 @@
+@use "../sass/helpers/variables" as *;
+@use "../sass/helpers/mixins" as *;
+
+.faqs-container {
+  margin: 5em 0;
+
+  .container {
+    @include h1AndPathComp;
+  }
+}
+
+.our-faqs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+
+  .q-group {
+    details {
+      width: 100%;
+      background-color: $section-clr;
+      padding: 1.5em 2em;
+      transition: $main-transition;
+
+      &,
+      * {
+        outline: none;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 1em;
+      }
+
+      summary {
+        color: $title-clr;
+        list-style: none;
+        cursor: pointer;
+        position: relative;
+        font-weight: $md-font;
+
+        .before,
+        .after {
+          position: absolute;
+          left: -1.5em;
+          top: 50%;
+          translate: 0 -50%;
+          width: 1em;
+          height: 2.5px;
+          background-color: $title-clr;
+          transition: $main-transition;
+          rotate: 0;
+        }
+      }
+
+      p {
+        padding-top: 0.5em;
+        color: #eee;
+      }
+
+      &[open] {
+        background-color: $first-clr;
+      }
+    }
+  }
+
+  @include breakpoint((xs, sm)) {
+    grid-template-columns: initial;
+  }
+}
