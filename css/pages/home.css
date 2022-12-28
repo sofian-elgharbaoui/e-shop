@@ -172,41 +172,56 @@
   background-color: hsl(250deg, 60%, 98%);
   border-radius: 1em;
   overflow: hidden;
+  height: 23em;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 #new-arrivals .new-products .new-product::before {
   content: "New";
   position: absolute;
-  left: 6px;
-  top: 6px;
+  left: 10px;
+  top: 10px;
   padding: 2px 6px;
   background-color: hsl(7deg, 88%, 61%);
   color: #eee;
   border-radius: 5px;
 }
-#new-arrivals .new-products .new-product .img img {
-  width: 80%;
+#new-arrivals .new-products .new-product .img {
+  position: relative;
+  flex-basis: calc(100% - 120px);
 }
-#new-arrivals .new-products .new-product h2 {
+#new-arrivals .new-products .new-product .img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  height: 90%;
+}
+#new-arrivals .new-products .new-product .info {
+  flex-basis: 120px;
+  justify-self: flex-end;
+}
+#new-arrivals .new-products .new-product .info h2 {
   text-transform: capitalize;
 }
-#new-arrivals .new-products .new-product h2 + span {
+#new-arrivals .new-products .new-product .info h2 + span {
   margin: 0.5em 0;
 }
-#new-arrivals .new-products .new-product .b-a-price {
+#new-arrivals .new-products .new-product .info .b-a-price {
   justify-content: center;
   gap: 1em;
 }
-#new-arrivals .new-products .new-product .b-a-price span {
+#new-arrivals .new-products .new-product .info .b-a-price span {
   color: gray;
+  font-weight: 500;
 }
-#new-arrivals .new-products .new-product .b-a-price del {
+#new-arrivals .new-products .new-product .info .b-a-price del {
   color: hsl(7deg, 88%, 61%);
 }
-#new-arrivals .new-products .new-product .bx-cart-alt {
+#new-arrivals .new-products .new-product .info .cart {
   display: block;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 2.3em;
   margin-left: auto;
   padding: 0.5em;
   background-color: hsl(7deg, 88%, 61%);
@@ -215,8 +230,12 @@
   position: relative;
   right: -3em;
   transition: 0.3s;
+  cursor: pointer;
 }
-#new-arrivals .new-products .new-product:hover .bx-cart-alt {
+#new-arrivals .new-products .new-product .info .cart .bx-cart-alt {
+  font-size: 1.3em;
+}
+#new-arrivals .new-products .new-product:hover .cart {
   right: 0;
 }
 

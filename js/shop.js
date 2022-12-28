@@ -45,7 +45,7 @@ function createProduct(productObj, ourSlide) {
     "data-stl": productObj.style,
   });
   aProduct.html(`
-  <span class="before">${productObj.condition}</span>
+      <span class="before">${productObj.condition}</span>
       <div class="img">
         <img src="${productObj.img}"/>
       </div>
@@ -53,10 +53,10 @@ function createProduct(productObj, ourSlide) {
         <h2 class="name">${productObj.name}</h2>
         <span class="type d-bl">${productObj["sub-category"]}</span>
         <div class="b-a-price d-fl">
-          <span class="price">${productObj.price}</span>
+        <span>$<span class="price">${productObj.price}</span></span>
           <del class="prev-price">${productObj.previousPrice}</del>
         </div>
-        <a class="cart" href="http://e-shop/shop.index/${productObj.name}"><i class="bx bx-cart-alt"></i></a>
+        <a class="cart"><i class="bx bx-cart-alt"></i></a>
       </div>
     `);
 
@@ -170,15 +170,8 @@ for (let i = 0; i < allInputs.length; i++) {
   };
 }
 
-// // // ADD HOW MANY PRODUCTS IS IN EACH INPUT
-allInputs;
-allProductsInJSON;
-// console.log(
-//   allProductsInJSON[18][allInputs[4].getAttribute("name")],
-//   allInputs[4].id
-// );
+// // // ADD HOW MANY PRODUCTS ARE IN EACH INPUT
 for (let i = 0; i < allInputs.length; i++) {
-  // console.log(allInputs[i].getAttribute("name"), allInputs[i].id);
   for (let j = 0; j < allProductsInJSON.length; j++) {
     if (
       allProductsInJSON[j][allInputs[i].getAttribute("name")] == allInputs[i].id
