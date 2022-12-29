@@ -100,13 +100,13 @@
   opacity: 1;
   transition: width 0.3s;
   cursor: pointer;
-  outline: none;
 }
 .slider-controls span.active, .slider-controls span.swiper-pagination-bullet-active,
 .slider-controls .swiper-pagination-bullet.active,
 .slider-controls .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: hsl(250deg, 8%, 15%);
   width: 2em;
+  outline: none;
 }
 
 #discount-section div {

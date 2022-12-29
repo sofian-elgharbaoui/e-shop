@@ -97,12 +97,12 @@
     opacity: 1;
     transition: width $main-transition;
     cursor: pointer;
-    outline: none;
 
     &.active,
     &.swiper-pagination-bullet-active {
       background-color: $title-clr;
       width: 2em;
+      outline: none;
     }
   }
 }
