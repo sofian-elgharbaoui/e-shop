@@ -87,9 +87,10 @@ header {
 
   .aside-cart {
     @include styleAside;
+
     .chosen-products {
-      max-height: 65vh;
-      margin-bottom: $mg-2;
+      height: 23em;
+      margin-bottom: $mg-1;
       overflow: auto;
 
       .chosen-product {
@@ -122,7 +123,7 @@ header {
             text-transform: capitalize;
           }
 
-          .price {
+          p {
             color: $first-clr;
           }
 
@@ -174,6 +175,22 @@ header {
         margin-right: 5px;
       }
     }
+
+    button.checkout {
+      padding: 6px 10px;
+      display: block;
+      width: fit-content;
+      margin: {
+        left: auto;
+        top: 1em;
+      }
+      background-color: $first-clr-alt;
+      color: #fff;
+      border: none;
+      border-radius: 2px;
+      font-size: $h3-font-size;
+      letter-spacing: 1.2px;
+    }
   }
 
   .close-icon {
@@ -184,9 +201,9 @@ header {
     }
     cursor: pointer;
 
-    // i {
-    //   display: block;
-    // }
+    i {
+      display: block;
+    }
 
     + h2 {
       text-transform: uppercase;
@@ -196,20 +213,20 @@ header {
     }
   }
 
-  @include breakpoint((xs, sm)) {
-    .close-icon,
-    .bx {
-      font-size: $h3-font-size !important;
-    }
-  }
-
   .aside-register {
     @include styleAside;
 
     form {
+      h2 {
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: $mg-1-5;
+        color: $title-clr;
+      }
       input {
         display: block;
         width: 100%;
+        max-width: 370px;
         height: 4em;
         margin-bottom: $mg-1;
         background-color: $section-clr;
@@ -226,6 +243,31 @@ header {
         border: none;
         color: $first-clr;
       }
+    }
+
+    .sign-up-form {
+      input {
+        margin: 0 auto $mg-1;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
+  }
+
+  abbr[title] {
+    text-decoration: none;
+  }
+  @include breakpoint((xs)) {
+    .aside-cart,
+    .aside-pages-bar,
+    .aside-register {
+      width: 100vw;
+    }
+    .close-icon,
+    .bx {
+      font-size: $h3-font-size !important;
     }
   }
 }

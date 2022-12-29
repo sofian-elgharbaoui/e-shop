@@ -211,7 +211,7 @@ header ul.user-bar li i {
 header .aside-pages-bar {
   position: fixed;
   top: 0;
-  right: -26em;
+  right: -35em;
   height: 100vh;
   width: 25em;
   background-color: hsl(250deg, 60%, 98%);
@@ -225,7 +225,7 @@ header .aside-pages-bar ul {
 header .aside-cart {
   position: fixed;
   top: 0;
-  right: -26em;
+  right: -35em;
   height: 100vh;
   width: 25em;
   background-color: hsl(250deg, 60%, 98%);
@@ -234,8 +234,8 @@ header .aside-cart {
   box-shadow: -3px 0 3px hsla(0deg, 0%, 15%, 0.1);
 }
 header .aside-cart .chosen-products {
-  max-height: 65vh;
-  margin-bottom: 2em;
+  height: 23em;
+  margin-bottom: 1em;
   overflow: auto;
 }
 header .aside-cart .chosen-products .chosen-product {
@@ -265,7 +265,7 @@ header .aside-cart .chosen-products .chosen-product .details {
 header .aside-cart .chosen-products .chosen-product .details h3 {
   text-transform: capitalize;
 }
-header .aside-cart .chosen-products .chosen-product .details .price {
+header .aside-cart .chosen-products .chosen-product .details p {
   color: hsl(7deg, 88%, 61%);
 }
 header .aside-cart .chosen-products .chosen-product .details .controls {
@@ -313,6 +313,21 @@ header .aside-cart .final-details {
 header .aside-cart .final-details .number {
   margin-right: 5px;
 }
+header .aside-cart button.checkout {
+  padding: 6px 10px;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-top: 1em;
+  background-color: hsl(7deg, 88%, 58%);
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  font-size: 1.25em;
+  letter-spacing: 1.2px;
+}
 header .close-icon {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -321,22 +336,19 @@ header .close-icon {
   margin-bottom: 2em;
   cursor: pointer;
 }
+header .close-icon i {
+  display: block;
+}
 header .close-icon + h2 {
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 1.5em;
   color: hsl(250deg, 8%, 15%);
 }
-@media (max-width: 767px) {
-  header .close-icon,
-header .bx {
-    font-size: 1.25em !important;
-  }
-}
 header .aside-register {
   position: fixed;
   top: 0;
-  right: -26em;
+  right: -35em;
   height: 100vh;
   width: 25em;
   background-color: hsl(250deg, 60%, 98%);
@@ -344,9 +356,16 @@ header .aside-register {
   transition: 0.3s;
   box-shadow: -3px 0 3px hsla(0deg, 0%, 15%, 0.1);
 }
+header .aside-register form h2 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1.5em;
+  color: hsl(250deg, 8%, 15%);
+}
 header .aside-register form input {
   display: block;
   width: 100%;
+  max-width: 370px;
   height: 4em;
   margin-bottom: 1em;
   background-color: #fff;
@@ -379,6 +398,26 @@ header .aside-register form button {
   background-color: transparent;
   border: none;
   color: hsl(7deg, 88%, 61%);
+}
+header .aside-register .sign-up-form input {
+  margin: 0 auto 1em;
+}
+header .aside-register .sign-up-form p {
+  text-align: center;
+}
+header abbr[title] {
+  text-decoration: none;
+}
+@media (max-width: 575px) {
+  header .aside-cart,
+header .aside-pages-bar,
+header .aside-register {
+    width: 100vw;
+  }
+  header .close-icon,
+header .bx {
+    font-size: 1.25em !important;
+  }
 }
 
 /* finish Styling The Header*/
