@@ -95,7 +95,17 @@ ourLogInForm.children("input#sign-in").click((e) => {
     ourLogInForm.children().val("");
     location.reload();
   } else {
-    alert("There is no email equal that in the local storage");
+    if (
+      peopleList.find(
+        (obj) =>
+          obj.email == ourLogInForm.children()[1].value ||
+          obj.password == ourLogInForm.children()[2].value
+      )
+    ) {
+      alert("your password or email is wrong");
+    } else {
+      alert("There is no email equal that in the local storage");
+    }
   }
 });
 
