@@ -19,11 +19,11 @@ window.onscroll = () => {
   else goUp.removeClass("visible");
 };
 
+let closeIcon = $(".close-icon");
 function showAndHide(asideEl) {
   asideEl.css("right", "0");
-  let closeIcon = $(".close-icon");
   closeIcon.on("click", (e) => {
-    $(e.currentTarget).closest(asideEl).css("right", " -26em");
+    $(e.currentTarget).closest(asideEl).css("right", " -35em");
   });
 }
 
@@ -51,8 +51,96 @@ navIcon.on("click", () => {
   showAndHide(navBar);
 });
 
-// // // a little bit of JS for the FAQ's Page
+// // // if the user is existed
+let exist = JSON.parse(localStorage.getItem("exist")) || "";
+if (exist.length) {
+  let abbr = $("<abbr/>", {
+    text: exist,
+    title: "click to log out",
+  });
+  userIcon.before(abbr).hide();
 
+  let personName = $("abbr[title]");
+  personName.click((e) => {
+    e.target.remove();
+    userIcon.show();
+    exist = "";
+    localStorage.setItem("exist", JSON.stringify(exist));
+  });
+}
+// // // All About The Register Page
+let ourLogInForm = $(".log-in-form");
+let registerButton = ourLogInForm.children()[4].children[0];
+// console.log(ourLogInForm.children()[3].children[0]);
+
+let ourSignUpForm = $(".sign-up-form");
+let SignInButton = ourSignUpForm.children()[5].children[0];
+
+let peopleList = JSON.parse(localStorage.getItem("people List")) || [];
+
+ourLogInForm.children("input#sign-in").click((e) => {
+  e.preventDefault();
+  if (
+    peopleList.find(
+      (obj) =>
+        obj.email == ourLogInForm.children()[1].value &&
+        obj.password == ourLogInForm.children()[2].value
+    )
+  ) {
+    exist = peopleList.find(
+      (obj) => obj.email == ourLogInForm.children()[1].value
+    ).username;
+    userIcon.before(exist).hide();
+    localStorage.setItem("exist", JSON.stringify(exist));
+    ourLogInForm.children().val("");
+    location.reload();
+  } else {
+    alert("There is no email equal that in the local storage");
+  }
+});
+
+registerButton.onclick = () => {
+  asideRegister.css("width", "100vw");
+  ourLogInForm.attr("hidden", "");
+  ourSignUpForm[0].removeAttribute("hidden");
+  ourLogInForm.children().val("");
+
+  closeIcon.click(() => {
+    if (window.innerWidth >= 678) {
+      asideRegister.css("width", "25em");
+      // ourLogInForm.children().css({ margin: "0 0 1em", textAlign: "left" });
+    }
+  });
+};
+
+ourSignUpForm.children("input[type='submit']").click((e) => {
+  e.preventDefault();
+  if (
+    peopleList.find((obj) => obj.email == ourSignUpForm.children()[2].value)
+  ) {
+    alert("this email has already been registered");
+  } else {
+    peopleList.push({
+      username: String(ourSignUpForm.children()[1].value),
+      email: String(ourSignUpForm.children()[2].value),
+      password: String(ourSignUpForm.children()[3].value),
+    });
+
+    localStorage.setItem("people List", JSON.stringify(peopleList));
+    alert("remember your email & password");
+    location.reload();
+  }
+});
+
+SignInButton.onclick = () => {
+  ourSignUpForm.attr("hidden", "");
+  ourLogInForm.children("input").css("margin", "0 auto 1em");
+  ourLogInForm.children("p").css("text-align", "center");
+  ourLogInForm[0].removeAttribute("hidden");
+  ourSignUpForm.children().val("");
+};
+
+// // // a little bit of JS for the FAQ's Page
 let details = $("details");
 let allSummaries = $("summary");
 
@@ -80,7 +168,7 @@ for (let i = 0; i < details.length; i++) {
 // onload: to do sth immediately after the window has been loaded
 // // // ADD THE CHOOSEN PRODUCT from LocalStorage & Products TO THE CART, in addition to its actions
 window.onload = () => {
-  function addToCart(productObj, quantity) {
+  function addToCart(productObj, quantity, container) {
     let chosenProd = $("<div/>", {
       id: productObj.id,
       class: "chosen-product",
@@ -92,7 +180,7 @@ window.onload = () => {
   </div>
   <div class="details">
     <h3 class="product-title">${productObj.name}</h3>
-    <span class="price d-bl">${productObj.price}</span>
+    <p>$<span class="price">${productObj.price}</span></p>
     <div class="controls">
       <span class="minus">&minus;</span>
       <span class="amount">${quantity}</span>
@@ -101,7 +189,7 @@ window.onload = () => {
     </div>
   </div>`);
 
-    chosenProductsUp.prepend(chosenProd);
+    $(container).prepend(chosenProd);
   }
 
   let chosenProductsUp = $("header .chosen-products");
@@ -113,7 +201,8 @@ window.onload = () => {
   chosenProductsfromLS.forEach((arr) => {
     addToCart(
       allProductsFromJsons.find((obj) => obj.id == arr[0]),
-      arr[1]
+      arr[1],
+      chosenProductsUp
     );
   });
 
@@ -146,7 +235,8 @@ window.onload = () => {
       chosenProductsfromLS.forEach((arr) => {
         addToCart(
           allProductsFromJsons.find((obj) => obj.id == arr[0]),
-          arr[1]
+          arr[1],
+          chosenProductsUp
         );
       });
       localStorage.setItem(
@@ -194,7 +284,7 @@ window.onload = () => {
 
         theCost = (
           +chosenProductsUp.next().find("#cost").get()[0].innerHTML +
-          +$(allPlusSigns[p]).parent().prev().html()
+          +$(allPlusSigns[p]).parent().prev().children().first().html()
         ).toFixed(2);
         chosenProductsUp.next().find("#cost").html(theCost);
         localStorage.setItem("the Cost", JSON.stringify(theCost));
@@ -218,7 +308,7 @@ window.onload = () => {
 
         theCost = (
           +chosenProductsUp.next().find("#cost").get()[0].innerHTML -
-          +$(allMinusSigns[m]).parent().prev().html()
+          +$(allMinusSigns[m]).parent().prev().children().first().html()
         ).toFixed(2);
         chosenProductsUp.next().find("#cost").html(theCost);
         localStorage.setItem("the Cost", JSON.stringify(theCost));
@@ -237,7 +327,7 @@ window.onload = () => {
 
         theCost = (
           +chosenProductsUp.next().find("#cost").get()[0].innerHTML -
-          +$(allTrashIcons[t]).parent().prev().html() *
+          +$(allTrashIcons[t]).parent().prev().children().first().html() *
             chosenProductsfromLS.find((arr) => arr[0] == relatedProd.id)[1]
         ).toFixed(2);
         chosenProductsUp.next().find("#cost").html(theCost);
