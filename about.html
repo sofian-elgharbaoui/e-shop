@@ -43,9 +43,9 @@
           <ul>
             <li><a href="./index.html">home</a></li>
             <li><a href="./shop.html">shop</a></li>
-            <li><a href="./cart.html">cart</a></li>
             <li><a href="./blog.html">blog</a></li>
-            <li><a href="./faq.html">faq's</a></li>
+            <li><a href="./about.html" class="active">about</a></li>
+            <li><a href="./faqs.html">faq's</a></li>
             <li><a href="./contact.html">contact</a></li>
           </ul>
         </nav>
@@ -66,8 +66,8 @@
         <div class="close-icon">
           <i class="bx bx-x bx-md"></i>
         </div>
-        <h2>Login</h2>
         <form action="" class="log-in-form">
+          <h2>Welcome Back</h2>
           <input
             type="email"
             name="email"
@@ -80,10 +80,20 @@
             id="password"
             placeholder="Your Password"
           />
-          <input type="submit" value="Sign in" />
-          <p>You are not a member? <button>Sign up now</button></p>
+          <input type="submit" value="Sign in" id="sign-in" />
+          <p>
+            You are not a member? <button type="button">Sign up now</button>
+          </p>
         </form>
+
         <form action="" class="sign-up-form" hidden>
+          <h2>Create Account</h2>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Your Name"
+          />
           <input
             type="email"
             name="email"
@@ -96,8 +106,8 @@
             id="password"
             placeholder="Your Password"
           />
-          <input type="submit" value="Sign in" />
-          <p>You are a member? <button>Sign in now</button></p>
+          <input type="submit" value="Sign up" />
+          <p>You are a member? <button type="button">Sign in now</button></p>
         </form>
       </div>
       <!-- =================== CART =================== -->
@@ -110,13 +120,14 @@
         <div class="final-details">
           <p class="chosen-products_number">
             <span class="number">0</span>
-            <span class="item">item</span>
+            <span class="item">item<small>(s)</small></span>
           </p>
           <h3 class="final-cost">
             <span>$</span>
             <span id="cost"></span>
           </h3>
         </div>
+        <button class="checkout">checkout</button>
       </div>
       <!-- =================== pages-bar =================== -->
       <nav class="aside-pages-bar">
@@ -124,10 +135,9 @@
           <li class="close-icon"><i class="bx bx-x bx-sm"></i></li>
           <li><a href="./index.html">home</a></li>
           <li><a href="./shop.html">shop</a></li>
-          <li><a href="./cart.html">cart</a></li>
           <li><a href="./blog.html">blog</a></li>
           <li><a href="./about.html" class="active">about</a></li>
-          <li><a href="./faq.html">faq's</a></li>
+          <li><a href="./faqs.html">faq's</a></li>
           <li><a href="./contact.html">contact</a></li>
         </ul>
       </nav>
@@ -178,9 +188,15 @@
             of your life
           </p>
           <div class="social-media">
-            <a href=""><i class="bx bxl-facebook bx-sm"></i></a>
-            <a href=""><i class="bx bxl-twitter bx-sm"></i></a>
-            <a href=""><i class="bx bxl-instagram bx-sm"></i></a>
+            <a href="http://facebook.com/sofian.gharbaoui"
+              ><i class="bx bxl-facebook bx-sm"></i
+            ></a>
+            <a href="https://twitter.com/SofianElgharba1"
+              ><i class="bx bxl-twitter bx-sm"></i
+            ></a>
+            <a href="http://linkedin.com/in/soufiane-el-gharbaoui"
+              ><i class="bx bxl-linkedin bx-sm"></i
+            ></a>
           </div>
         </div>
         <div class="about">
@@ -212,6 +228,7 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script src="./js/main.js" type="module"></script>
   </body>
 </html>
