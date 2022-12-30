@@ -56,12 +56,12 @@ let exist = JSON.parse(localStorage.getItem("exist")) || "";
 if (exist.length) {
   let abbr = $("<abbr/>", {
     text: exist,
-    title: "click to log out",
+    title: "double click to log out",
   });
   userIcon.before(abbr).hide();
 
   let personName = $("abbr[title]");
-  personName.click((e) => {
+  personName.dblclick((e) => {
     e.target.remove();
     userIcon.show();
     exist = "";
@@ -71,7 +71,6 @@ if (exist.length) {
 // // // All About The Register Page
 let ourLogInForm = $(".log-in-form");
 let registerButton = ourLogInForm.children()[4].children[0];
-// console.log(ourLogInForm.children()[3].children[0]);
 
 let ourSignUpForm = $(".sign-up-form");
 let SignInButton = ourSignUpForm.children()[5].children[0];
@@ -92,7 +91,9 @@ ourLogInForm.children("input#sign-in").click((e) => {
     ).username;
     userIcon.before(exist).hide();
     localStorage.setItem("exist", JSON.stringify(exist));
-    ourLogInForm.children().val("");
+    console.log(ourLogInForm.children()[1], ourLogInForm.children());
+    ourLogInForm.children().eq(1).val("");
+    ourLogInForm.children().eq(2).val("");
     location.reload();
   } else {
     if (
@@ -113,12 +114,12 @@ registerButton.onclick = () => {
   asideRegister.css("width", "100vw");
   ourLogInForm.attr("hidden", "");
   ourSignUpForm[0].removeAttribute("hidden");
-  ourLogInForm.children().val("");
+  ourLogInForm.children().eq(1).val("");
+  ourLogInForm.children().eq(2).val("");
 
   closeIcon.click(() => {
     if (window.innerWidth >= 678) {
       asideRegister.css("width", "25em");
-      // ourLogInForm.children().css({ margin: "0 0 1em", textAlign: "left" });
     }
   });
 };
@@ -147,7 +148,9 @@ SignInButton.onclick = () => {
   ourLogInForm.children("input").css("margin", "0 auto 1em");
   ourLogInForm.children("p").css("text-align", "center");
   ourLogInForm[0].removeAttribute("hidden");
-  ourSignUpForm.children().val("");
+  ourSignUpForm.children().eq(1).val("");
+  ourSignUpForm.children().eq(2).val("");
+  ourSignUpForm.children().eq(3).val("");
 };
 
 // // // a little bit of JS for the FAQ's Page
