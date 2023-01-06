@@ -47,7 +47,7 @@ function createProduct(productObj, ourSlide) {
   aProduct.html(`
       <span class="before">${productObj.condition}</span>
       <div class="img">
-        <img src="..${productObj.img}" alt="${productObj.alt}"/>
+        <img src="${productObj.img}" alt="${productObj.alt}"/>
       </div>
       <div class="info">
         <h2 class="name">${productObj.name}</h2>
