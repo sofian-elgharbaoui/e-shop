@@ -91,7 +91,7 @@
   margin-top: 1em;
   gap: 5px;
 }
-.slider-controls span,
+.slider-controls li,
 .slider-controls .swiper-pagination-bullet {
   width: 1em;
   height: 6px;
@@ -101,7 +101,7 @@
   transition: width 0.3s;
   cursor: pointer;
 }
-.slider-controls span.active, .slider-controls span.swiper-pagination-bullet-active,
+.slider-controls li.active, .slider-controls li.swiper-pagination-bullet-active,
 .slider-controls .swiper-pagination-bullet.active,
 .slider-controls .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: hsl(250deg, 8%, 15%);

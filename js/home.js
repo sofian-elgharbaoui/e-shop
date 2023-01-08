@@ -7,14 +7,14 @@ let currentSlide = 1;
 let sliderControlsUp = $("#interface .slider-controls");
 
 for (let i = 1; i <= slidesNumber; i++) {
-  let liItem = $("<span></span>", {
+  let liItem = $("<li></li>", {
     "data-index": i,
   });
   sliderControlsUp.append(liItem);
 }
 
 let sliderControls = document.querySelectorAll(
-  "#interface .slider-controls span"
+  "#interface .slider-controls li"
 );
 
 let goToSlide;
@@ -64,7 +64,7 @@ function createProduct(prodObj, container) {
   newProduct.className = "new-product swiper-slide";
   newProduct.innerHTML = `
     <div class="img">
-      <img src="${prodObj.img}"/>
+      <img src="${prodObj.img}" alt="${prodObj.alt}"/>
     </div>
     <div class="info">
       <h2 class="name">${prodObj.name}</h2>

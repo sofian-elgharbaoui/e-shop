@@ -182,7 +182,8 @@ header ul li a {
   display: flex;
   align-items: center;
 }
-header ul li a:hover, header ul li a.active {
+header ul li a:hover,
+header ul li a.active {
   color: hsl(7deg, 88%, 61%);
   position: relative;
 }
@@ -282,29 +283,86 @@ header .aside-cart .chosen-products .chosen-product .details .controls .plus {
 header .aside-cart .chosen-products .chosen-product .details .controls .amount {
   padding: 0 0.5em;
 }
-header .aside-cart .chosen-products .chosen-product .details .controls .bx-trash {
+header
+  .aside-cart
+  .chosen-products
+  .chosen-product
+  .details
+  .controls
+  .bx-trash {
   margin-left: auto;
   color: hsl(7deg, 88%, 61%);
 }
-header .aside-cart .chosen-products .chosen-product .details .controls .bx-trash:hover {
+header
+  .aside-cart
+  .chosen-products
+  .chosen-product
+  .details
+  .controls
+  .bx-trash:hover {
   color: hsl(7deg, 88%, 58%);
 }
 header .aside-cart .chosen-products .chosen-product .details .controls .minus,
 header .aside-cart .chosen-products .chosen-product .details .controls .plus,
-header .aside-cart .chosen-products .chosen-product .details .controls .bx-trash {
+header
+  .aside-cart
+  .chosen-products
+  .chosen-product
+  .details
+  .controls
+  .bx-trash {
   cursor: pointer;
 }
-header .aside-cart .chosen-products .chosen-product .details .controls .minus::-moz-selection, header .aside-cart .chosen-products .chosen-product .details .controls .plus::-moz-selection, header .aside-cart .chosen-products .chosen-product .details .controls .bx-trash::-moz-selection {
-  -moz-user-select: none;
-       user-select: none;
-}
-header .aside-cart .chosen-products .chosen-product .details .controls .minus::selection,
-header .aside-cart .chosen-products .chosen-product .details .controls .plus::selection,
-header .aside-cart .chosen-products .chosen-product .details .controls .bx-trash::selection {
+header
+  .aside-cart
+  .chosen-products
+  .chosen-product
+  .details
+  .controls
+  .minus::-moz-selection,
+header
+  .aside-cart
+  .chosen-products
+  .chosen-product
+  .details
+  .controls
+  .plus::-moz-selection,
+header
+  .aside-cart
+  .chosen-products
+  .chosen-product
+  .details
+  .controls
+  .bx-trash::-moz-selection {
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+header
+  .aside-cart
+  .chosen-products
+  .chosen-product
+  .details
+  .controls
+  .minus::selection,
+header
+  .aside-cart
+  .chosen-products
+  .chosen-product
+  .details
+  .controls
+  .plus::selection,
+header
+  .aside-cart
+  .chosen-products
+  .chosen-product
+  .details
+  .controls
+  .bx-trash::selection {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 header .aside-cart .final-details {
   display: flex;
@@ -373,7 +431,7 @@ header .aside-register form input {
   border: none;
   padding-left: 1.5em;
 }
-header .aside-register form input[type=submit] {
+header .aside-register form input[type="submit"] {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -386,11 +444,11 @@ header .aside-register form input[type=submit] {
   color: #eee;
   cursor: pointer;
 }
-header .aside-register form input[type=submit]:hover {
+header .aside-register form input[type="submit"]:hover {
   background-color: hsl(7deg, 88%, 58%);
 }
 @media (max-width: 767px) {
-  header .aside-register form input[type=submit] {
+  header .aside-register form input[type="submit"] {
     font-size: 0.875em;
   }
 }
@@ -410,12 +468,12 @@ header abbr[title] {
 }
 @media (max-width: 575px) {
   header .aside-cart,
-header .aside-pages-bar,
-header .aside-register {
+  header .aside-pages-bar,
+  header .aside-register {
     width: 100vw;
   }
   header .close-icon,
-header .bx {
+  header .bx {
     font-size: 1.25em !important;
   }
 }
@@ -466,4 +524,4 @@ footer > p .bx {
 footer > p .bx {
   position: relative;
   top: 2px;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */

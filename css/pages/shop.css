@@ -104,7 +104,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  translate: -50% -50%;
+  transform: translate(-50%, -50%);
   height: 90%;
 }
 .our-shop .all-products .all-slides-wrapper .slide .a-product .info {
